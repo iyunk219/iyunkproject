@@ -40,7 +40,7 @@
                                 <th class='product-remove'>Hapus</th>
                             </tr>
                         </thead>
-                        <tbody id='cart-body'>
+                        <tbody id='cart-list'>
                             <!-- Contoh Produk 1 -->
                             <tr data-id="1">
                                 <td class='product-thumbnail'>
@@ -141,67 +141,38 @@
 </div> <!-- End of Section -->
 
 <script>
-// Fungsi untuk menghitung subtotal dan total keseluruhan
-function updateCart() {
-    const rows = document.querySelectorAll('#cart-body tr');
-    let subtotal = 0;
-
-    rows.forEach(row => {
-        const priceElement = row.querySelector('.product-price');
-        const quantityElement = row.querySelector('.quantity-amount');
-        const totalElement = row.querySelector('.product-total');
-
-        // Ambil harga produk
-        const price = parseFloat(priceElement.innerText.replace('Rp ', '').replace('.', '').replace(',', '.'));
-        
-        // Ambil kuantitas
-        const quantity = parseInt(quantityElement.value);
-
-        // Hitung total untuk produk ini
-        const total = price * quantity;
-        totalElement.innerText = 'Rp ' + total.toLocaleString('id-ID', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
-
-        // Tambahkan ke subtotal
-        subtotal += total;
-    });
-
-    // Update subtotal dan total akhir
-    document.getElementById('subtotal').innerText = 'Rp ' + subtotal.toLocaleString('id-ID', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
-    document.getElementById('total').innerText = 'Rp ' + subtotal.toLocaleString('id-ID', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
-}
-
-// Fungsi untuk mengupdate total berdasarkan kuantitas
-function updateTotal(element, change = 0) {
-    const row = element.closest('tr');
-    const quantityElement = row.querySelector('.quantity-amount');
-
-    // Update kuantitas
-    let quantity = parseInt(quantityElement.value);
-    if (change !== 0) {
-        quantity += change;
-        if (quantity <= 0) {
-            quantity = 1; // Minimum kuantitas adalah 1
-        }
-        quantityElement.value = quantity;
-    }
-
-    // Update cart setelah perubahan kuantitas
-    updateCart();
-}
-
-// Fungsi untuk menghapus produk dari keranjang
-function removeProduct(button) {
-    const row = button.closest('tr');
-    row.remove();
+function displayCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartList = document.getElementById('cart-list');
     
-    // Update cart setelah penghapusan
-    updateCart();
+    // Kosongkan daftar keranjang sebelumnya
+    cartList.innerHTML = '';
+
+    // Tampilkan setiap item dalam keranjang
+    cart.forEach(item => {
+        const listItem = document.createElement('div');
+        listItem.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" style="width:50px; height:auto;">
+            <span>${item.name}</span> - ${item.price} x ${item.quantity}
+            <button onclick="removeFromCart('${item.id}')">Remove</button>
+        `;
+        cartList.appendChild(listItem);
+    });
 }
-</script>
 
-<!-- Bootstrap JS (Optional for dropdown and other components) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+// Panggil fungsi ini saat halaman keranjang dimuat
+window.onload = displayCart;
 
+function removeFromCart(productId) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // Filter keluar produk yang ingin dihapus
+    cart = cart.filter(item => item.id !== productId);
+    
+    // Simpan kembali ke localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    // Update tampilan keranjang
+    displayCart();
+}
 @endsection

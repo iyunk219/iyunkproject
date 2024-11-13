@@ -26,6 +26,14 @@
                         <input type="number" id="harga" name="harga" value="{{ old('harga', $produk->harga) }}" placeholder="Masukkan Harga.." required style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
                     </div>
                     <div style="margin-bottom: 15px;">
+                        <label for="product-price">Category:</label><br>
+                        <select class="form-control" name="id_category">
+                            @foreach($category as $row)
+                                <option value="{{$row->id}}" {{ $row->id == $produk->id_category ? 'selected' : '' }}>{{$row->nama_kategori}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 15px;">
                         <label for="produk-description">Deskripsi:</label><br>
                         <textarea id="deskripsi" name="deskripsi" placeholder="Masukkan Deskripsi Produk.." rows="4" required style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">{{ old('deskripsi', $produk->deskripsi) }}</textarea>
                     </div>

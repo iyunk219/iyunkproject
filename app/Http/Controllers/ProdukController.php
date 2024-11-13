@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 Use App\Models\Produk;
+Use App\Models\category;
 use Illuminate\Support\Facades\Storage;
 
 class ProdukController extends Controller
@@ -13,9 +14,9 @@ class ProdukController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $reques)
     {
-        
+        // dd($request->all());
         $data['produk'] = produk::get();
         return view('backend.produk.index',$data);
     }
@@ -28,7 +29,8 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        return view('backend.produk.create');
+        $data['category'] = category::get();
+        return view('backend.produk.create', $data);
     }
 
     /**
@@ -45,6 +47,7 @@ public function store(Request $request)
         'nama_produk' => 'required|string|max:255',
         'deskripsi' => 'required|string',
         'harga' => 'required|numeric',
+        'id_category' => 'required|numeric',
     ]);
 
     // Membuat instance Produk baru
@@ -54,6 +57,7 @@ public function store(Request $request)
     $produk->nama_produk = $request->input('nama_produk');
     $produk->deskripsi = $request->input('deskripsi');
     $produk->harga = $request->input('harga');
+    $produk->id_category = $request->input('id_category');
 
     // Menyimpan gambar
     if ($request->hasFile('img')) {
@@ -90,10 +94,11 @@ public function store(Request $request)
     public function edit($id)
     {
         // Retrieve the product by ID
+        $category = Category::all();
         $produk = produk::findOrFail($id);
         
         // Render the edit view with the produk data
-        return view('backend.produk.edit', compact('produk'));
+        return view('backend.produk.edit', compact('produk','category'));
     }
 
     /**
@@ -111,6 +116,7 @@ public function store(Request $request)
             'harga' => 'required|numeric',
             'deskripsi' => 'required|string',
             'img' => 'nullable|image|mimes:jpeg,jpg,png', // Optional image validation
+            'id_category' => 'required|numeric',
         ]);
 
         // Find the product by ID
@@ -130,6 +136,7 @@ public function store(Request $request)
         $produk->nama_produk = $request->nama_produk;
         $produk->harga = $request->harga;
         $produk->deskripsi = $request->deskripsi;
+    $produk->id_category = $request->input('id_category');
 
         // Save the updated produk
         $produk->save();

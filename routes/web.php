@@ -59,7 +59,7 @@ route::get('/backend/pembeli/edit/{id}','App\Http\Controllers\PembeliController@
 route::post('/backend/pembeli/update/{id}','App\Http\Controllers\PembeliController@update');
 route::get('/backend/pembeli/destroy/{id}','App\Http\Controllers\PembeliController@destroy');
 
-//admin
+//category
 //pembeli
 route::get('/backend/admin','App\Http\Controllers\AdminController@index')->name('index');
 route::get('/backend/admin/create','App\Http\Controllers\AdminController@create');
@@ -67,6 +67,13 @@ route::post('/backend/admin/store','App\Http\Controllers\AdminController@store')
 route::get('/backend/admin/edit/{id}','App\Http\Controllers\AdminController@edit');
 route::post('/backend/admin/update/{id}','App\Http\Controllers\AdminController@update');
 route::get('/backend/admin/destroy/{id}','App\Http\Controllers\AdminController@destroy');
+
+route::get('/backend/category','App\Http\Controllers\categoryController@index')->name('index');
+route::get('/backend/category/create','App\Http\Controllers\categoryController@create');
+route::post('/backend/category/store','App\Http\Controllers\categoryController@store');
+route::get('/backend/category/edit/{id}','App\Http\Controllers\categoryController@edit');
+route::post('/backend/category/update/{id}','App\Http\Controllers\categoryController@update');
+route::get('/backend/category/destroy/{id}','App\Http\Controllers\categoryController@destroy');
 
 //laporan
 route::get('/backend/laporan','App\Http\Controllers\LaporanController@index')->name('index');
