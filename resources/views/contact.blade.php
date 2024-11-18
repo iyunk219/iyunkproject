@@ -22,7 +22,6 @@
     </div>
 </div>
 <!-- End Hero Section -->
-
 <!-- Start Contact Form -->
 <div class="untree_co-section">
     <div class="container">
@@ -64,45 +63,93 @@
                                     </svg>
                                 </div>
                                 <div class="service-contents">
-                                    <p><a href="https://wa.me/620211234567" class="text-black">+62 (021) - 1234567</a></p>
+                                    <p><a href="https://wa.me/6282220105482" class="text-black">+62 (021) - 1234567</a></p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Contact Form -->
-                    <form method="POST" action="/send-message"> <!-- Update the action URL -->
+                    <form id="contact-form" onsubmit="sendWhatsAppMessage(event)">
                         <div class="row mb-4">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="fname" class="text-black">Nama Depan</label>
+                                    <label for="nama" class="text-black">Nama Depan</label>
                                     <input type="text" id="nama" name="nama" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="lname" class="text-black">No Hp</label>
-                                    <input type="text" id="no_hp" name="no_hp" class="form-control" required>
+                                    <label for="no_hp"class ="text-black">No Hp</label >
+                                    <input type ="text"id ="no_hp"name ="no_hp"class ="form-control " required >
                                 </div>
                             </div>
+
+                            <!-- Email Field -->
+                            <div class ="form-group mb -4 ">
+                                <label for ="email"class ="text-black "> Email</label >
+                                <input type ="email"id ="email"name ="email"class= "form-control " required >
+                            </div>
+                            
+                            <div class ="form-group mb -4 ">
+                                <label for ="email"class ="text-black "> Alamat</label >
+                                <input type ="text"id ="alamat"name ="alamat"class= "form-control " required >
+                            </div>
+                            <!-- Message Field -->
+                            <div class ="form-group mb -5 ">
+                                <label for ="message"class ="text-black ">Pesan</label >
+                                <textarea id ="message"name ="message "cols =30 rows =5 class = "form-control " required ></textarea >
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type=submit class=btn btn-primary-hover-outline>Kirim Pesan</button> 
+                        </form>
+
+                        <!-- Notification Message -->
+                        <div id ="notification"class ="alert alert-success notification ">
+                            Pesan Anda telah berhasil dikirim!
                         </div>
 
-                        <div class="form-group mb-4">
-                            <label for="email" class="text-black">Alamat Email</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
+                    </div> <!-- /.col-md-8 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.block -->
+        </div> <!-- /.container -->
+    </div> <!-- End Contact Form Section -->
 
-                        <div class="form-group mb-5">
-                            <label for="message" class=text-black>Pesan</label>
-                            <textarea id=message name=message cols=30 rows=5 class=form-control required></textarea> <!-- Added required attribute -->
-                        </div>
+    <!-- JavaScript to Handle Form Submission -->
+    <script>
+// Function to send message to WhatsApp
+function sendWhatsAppMessage(event) {
+    event.preventDefault(); 
 
-                        <button type=submit class=btn btn-primary-hover-outline>Kirim Pesan</button> <!-- Fixed button -->
-                    </form>
+    // Get values from input fields
+    var nama = document.getElementById('nama').value.trim();
+    var noHp = document.getElementById('no_hp').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var alamat = document.getElementById('alamat').value.trim(); 
+    var message = document.getElementById('message').value.trim();
 
-                </div> <!-- /.col-md-8 -->
-            </div> <!-- /.row -->
-        </div> <!-- /.block -->
-    </div> <!-- /.container -->
-</div> <!-- End Contact Form Section -->
+    // Create the message to be sent with formatting
+    var fullMessage = `*Nama:* ${nama}\n*No HP:* ${noHp}\n*Email:* ${email}\n*Alamat:* ${alamat}\n*Pesan:* ${message}`;
+
+    // Encode URI to ensure proper formatting
+    var encodedMessage = encodeURIComponent(fullMessage);
+    
+    // WhatsApp URL
+    var whatsappUrl = `https://wa.me/6282220105482?text=${encodedMessage}`;
+
+    // Open WhatsApp URL in a new tab
+    window.open(whatsappUrl, '_blank');
+
+    // Show notification message
+    document.getElementById('notification').style.display = 'block';
+    
+    // Optionally, clear the form after submission
+    document.getElementById('contact-form').reset();
+}
+</script>
+
+<script src="//code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 @endsection

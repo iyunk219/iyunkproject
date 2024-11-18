@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BackController;
+use App\Http\Controllers\FrontController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\loginRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,29 +16,46 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Rute utama
-Route::get('/home', function () {
-    return view('index');
-});
+// // Rute untuk halaman registrasi
+// Route::get('/register', function () {
+//     return view('register'); })->name('register');
 
-// Rute login
-Route::get('/login', 'App\Http\Controllers\LoginController@index')->name('login');
-Route::post('/login', 'App\Http\Controllers\LoginController@login');
+// // // Rute untuk halaman index
+// // Route::get('/index', function () {
+// //     return view('index');
+// // })->name('index');
 
-// Rute frontend
-Route::get('/backend_home', 'App\Http\Controllers\BackController@backend_home');
-Route::get('/pembeli', 'App\Http\Controllers\FrontController@pembeli');
-Route::get('/produk', 'App\Http\Controllers\FrontController@produk');
-Route::get('/pemesanan', 'App\Http\Controllers\FrontController@pemesanan');
-Route::get('/about', 'App\Http\Controllers\FrontController@about');
-Route::get('/blog', 'App\Http\Controllers\FrontController@blog');
-Route::get('/contact', 'App\Http\Controllers\FrontController@contact');
-Route::get('/cart', 'App\Http\Controllers\FrontController@cart');
-Route::get('/checkout', 'App\Http\Controllers\FrontController@checkout');
+// // Rute login
+// Route::post('/loginfront', 'App\Http\Controllers\loginfrontController@login');
 
-// Middleware untuk backend
-Route::group(['middleware' => 'LoginMiddleware'], function() {
+// Route::post('/register', 'App\Http\Controllers\loginfrontController@register');
+
+Route::get('/login', 'App\Http\Controllers\LoginRegisterController@login')->name('login'); // GET method
+Route::post('/login', 'App\Http\Controllers\LoginRegisterController@authenticate')->name('authenticate'); // POST method
+
+Route::get('/register', 'App\Http\Controllers\LoginRegisterController@register')->name('register'); // GET method
+Route::post('/register', 'App\Http\Controllers\LoginRegisterController@store')->name('store'); // POST method
+Route::get('user-page', function() {
+    return 'index';
+})->middleware('role:user')->name('template.layout');
+Route::get('/cart', 'App\Http\Controllers\FrontController@cart')->name('cart');
+
+Route::get('/produk', 'App\Http\Controllers\FrontController@produk')->name('produk');
+Route::get('/pembeli', 'App\Http\Controllers\FrontController@pembeli')->name('pembeli');
+Route::get('/pemesanan', 'App\Http\Controllers\FrontController@pemesanan')->name('pemesanan');
+Route::get('/about', 'App\Http\Controllers\FrontController@about')->name('about');
+Route::get('/blog', 'App\Http\Controllers\FrontController@blog')->name('blog');
+Route::get('/contact', 'App\Http\Controllers\FrontController@contact')->name('contact');
+Route::get('/checkout', 'App\Http\Controllers\FrontController@checkout')->name('checkout');
+Route::get('/login', 'App\Http\Controllers\LoginRegisterController@login');
+
+
+Route::get('admin-page', function() {
+    return 'index';
+})->middleware('role:admin')->name('template.main');
 // Rute backend
+Route::get('/backend_home', 'App\Http\Controllers\BackController@backend_home');
+
 Route::get('/backend/produk', 'App\Http\Controllers\ProdukController@index')->name('produk');
 route::get('/backend/produk/create','App\Http\Controllers\ProdukController@create');
 route::post('/backend/produk/store','App\Http\Controllers\ProdukController@store');
@@ -78,9 +99,6 @@ route::get('/backend/category/destroy/{id}','App\Http\Controllers\categoryContro
 //laporan
 route::get('/backend/laporan','App\Http\Controllers\LaporanController@index')->name('index');
 route::get('/backend/laporan/cetak','App\Http\Controllers\LaporanController@cetak');
-
 //logut
 route::get('logout','App\Http\Controllers\LoginController@logout')->name('logout');
-});
 
-?>

@@ -52,7 +52,6 @@
         </div><!-- .animated -->
     </div><!-- .content -->
 </div><!-- #right-panel -->
-
 <style>
     /* Custom styles for the card header */
     .card-header {
@@ -61,6 +60,15 @@
     }
 
     /* Custom styles for the table */
+    .table {
+        width: 100%; /* Pastikan tabel menggunakan lebar penuh */
+    }
+
+    .table th, .table td {
+        text-align: center; /* Rata tengah untuk semua header dan sel */
+        vertical-align: middle; /* Rata tengah secara vertikal */
+    }
+
     .table th {
         background-color: #5d6d7e; /* Match card header color */
         color: white;
@@ -80,6 +88,23 @@
         background-color: #5d6d7e; /* Dark blue-gray on hover */
         color: white; /* White text on hover */
     }
-</style>
 
+    /* Custom style for column widths */
+    th:nth-child(1), td:nth-child(1) { /* Kolom No */
+        width: 40px;  /* Lebar kolom No yang lebih kecil */
+        padding: 0;   /* Menghilangkan padding jika perlu */
+    }
+    
+    th:nth-child(2), td:nth-child(2) { /* Kolom Username */
+        width: 150px; /* Lebar kolom Username */
+    }
+    
+    th:nth-child(3), td:nth-child(3) { /* Kolom Password */
+        width: 150px; /* Lebar kolom Password */
+    }
+    
+    th:nth-child(4), td:nth-child(4) { /* Kolom Aksi */
+        width: 100px; /* Lebar kolom Aksi */
+    }
+</style>
 @endsection

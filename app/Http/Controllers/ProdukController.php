@@ -16,9 +16,8 @@ class ProdukController extends Controller
      */
     public function index(Request $reques)
     {
-        // dd($request->all());
-        $data['produk'] = produk::get();
-        return view('backend.produk.index',$data);
+        $produk = Produk::with('category')->get(); // Memuat produk beserta kategorinya
+        return view('backend.produk.index', compact('produk'));
     }
     
 

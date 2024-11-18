@@ -175,4 +175,5 @@ function removeFromCart(productId) {
     // Update tampilan keranjang
     displayCart();
 }
+</script>
 @endsection

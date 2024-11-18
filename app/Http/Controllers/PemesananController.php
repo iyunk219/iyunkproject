@@ -46,7 +46,7 @@ public function store(Request $request)
     'tgl_pemesanan' => 'required|date',
     'nama_pembeli' => 'required|exists:pembeli,id', // Validasi ID pembeli
     'alamat' => 'required|string|max:255',
-    'no_hp' => 'required|string|max:15',
+    'no_hp' => 'required|string|max:50',
     'nama_produk' => 'required|exists:produk,id', // Validasi ID produk
     'harga' => 'required|numeric',
     'ekspedisi' => 'required|string|max:100',

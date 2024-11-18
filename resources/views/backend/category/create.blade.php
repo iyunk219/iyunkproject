@@ -4,12 +4,12 @@
     <tr>
         <td>
             <div style="display: inline-block; text-align: left; border: 1px solid #ccc; border-radius: 8px; padding: 20px; background-color: #f9f9f9;">
-                <h2 style="text-align: center;">Tambah Data Admin</h2>
+                <h2 style="text-align: center;">Tambah Data Kategori</h2>
                 <form action="{{url('/backend/category/store')}}" method="post" enctype="multipart/form-data">
                     {{@csrf_field()}}
                     <div style="margin-bottom: 15px;">
                         <label for="product-name">Nama Kategori</label><br>
-                        <input type="text" id="nama_kategori" name="nama_kategori" placeholder="Masukkan nama_kategori." required style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+                        <input type="text" id="nama_kategori" name="nama_kategori" placeholder="Masukkan Nama Kategori" required style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
                     </div>
 
                     <div style="text-align: right;">

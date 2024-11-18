@@ -4,7 +4,7 @@
     <tr>
         <td>
             <div style="display: inline-block; text-align: left; border: 1px solid #ccc; border-radius: 8px; padding: 20px; background-color: #f9f9f9;">
-                <h2 style="text-align: center;">Edit Data category</h2>
+                <h2 style="text-align: center;">Edit Data Kategori</h2>
                 <form action="{{url('/backend/category/update/'.$category->id)}}" method="post">
                     {{@csrf_field()}}
                     <div style="margin-bottom: 15px;">

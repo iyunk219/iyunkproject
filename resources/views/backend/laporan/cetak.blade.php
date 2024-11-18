@@ -100,7 +100,13 @@
                     <td>{{ $item->nama_produk }}</td>
                     <td>Rp {{ number_format(floatval($item->harga), 0, ',', '.') }}</td>
                     <td>Rp {{ number_format(floatval($item->dibayar), 0, ',', '.') }}</td>
-                    <td>{{ $item->belum_dibayar }}</td>
+                     <td>
+                                            @if(is_numeric($item->belum_dibayar))
+                                                Rp {{ number_format($item->belum_dibayar, 0, ',', '.') }} <!-- Format sebagai mata uang -->
+                                            @else
+                                                {{ $item->belum_dibayar }} <!-- Tampilkan sebagai teks biasa -->
+                                            @endif
+                                        </td>
                     <td>{{ $item->metode_pembayaran }}</td>
                     <td>{{ $item->status_pembayaran }}</td>
                     <td>{{ $item->ekspedisi }}</td>

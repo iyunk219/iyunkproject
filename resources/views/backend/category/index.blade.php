@@ -7,10 +7,10 @@
                 <div class="col-lg-12">
                     <div class="card shadow-sm">
                         <div class="card-header d-flex justify-content-between align-items-center text-white">
-                            <strong class="card-title">Data Tabel category</strong>
+                            <strong class="card-title">Data Tabel Kategori</strong>
                             <!-- Tombol Tambah category -->
                             <a href="{{ url('/backend/category/create') }}" class="btn btn-light btn-sm">
-                                <i class="fa fa-plus"></i> Tambah category
+                                <i class="fa fa-plus"></i> Tambah Kategori
                             </a>
                         </div>
                         <div class="card-body">
@@ -18,7 +18,7 @@
                                 <thead class="thead" style="background-color: #5d6d7e; color: white;">
                                     <tr>
                                         <th scope="col">No</th>
-                                        <th scope="col">Nama Categori</th>
+                                        <th scope="col">Nama Kategori</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
@@ -63,6 +63,11 @@
     .table th {
         background-color: #5d6d7e; /* Match card header color */
         color: white;
+        text-align: center; /* Rata tengah untuk header */
+    }
+
+    .table td {
+        text-align: center; /* Rata tengah untuk semua sel */
     }
 
     .table tbody tr {
@@ -79,6 +84,11 @@
         background-color: #5d6d7e; /* Dark blue-gray on hover */
         color: white; /* White text on hover */
     }
-</style>
 
+    /* Custom style for small column width */
+    th:nth-child(1), td:nth-child(1) { /* Mengatur lebar kolom pertama (nomor) */
+        width: 40px; /* Atur lebar kolom sesuai kebutuhan */
+        padding: 0; /* Menghilangkan padding jika perlu */
+    }
+</style> 
 @endsection

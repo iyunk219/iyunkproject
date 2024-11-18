@@ -10,33 +10,41 @@ use Session;
 
 class LoginController extends Controller
 {
-     public function index()
-    {
-        if (Session::get('username')){
-            return redirect('/backend_home');
-        }
-        return view('login.login');
-    }
-    public function login(Request $request){
-        if(Session::get('username')!=''){
-            return redirect('/backend_home');
-            exit();
-        }
-        $data = admin::where('username',$request->username)->first();
-        if($data!=''){
-            if($request->password==$data->password){
-            Session::put('username',$data->username);
-            return redirect('/backend_home');
-            }
+    //  public function index()
+    // {
+    //     if (Session::get('username')){
+    //         return redirect('/backend_home');
+    //     }
+    //     return view('login.login');
+    // }
+    // public function login(Request $request){
+    //     if(Session::get('username')!=''){
+    //         return redirect('/backend_home');
+    //         exit();
+    //     }
+    //     $data = admin::where('username',$request->username)->first();
+    //     if($data!=''){
+    //         if($request->password==$data->password){
+    //         Session::put('username',$data->username);
+    //         return redirect('/backend_home');
+    //         }
 
-            }else{
-            Session('message');
-            return redirect('/login');
-            }
-        return redirect('/login')->with('message','Name atau Password Salah');
+    //         }else{
+    //         Session('message');
+    //         return redirect('/login');
+    //         }
+    //     return redirect('/login')->with('message','Name atau Password Salah');
+    // }
+    // public function logout(Request $request){
+    //     $request->session()->flush();
+    //     return redirect('template.layout');
+    // }
+    public function authenticated(Request $request, $user)
+{
+    if ($user->hasRole('admin')) {
+        return redirect()->route('template.main');
     }
-    public function logout(Request $request){
-        $request->session()->flush();
-        return redirect('template.layout');
-    }
+
+    return redirect()->route('template.layout');
+}
 }

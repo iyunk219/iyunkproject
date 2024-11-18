@@ -49,9 +49,9 @@
                     </ul>
 
                     <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-                       <!--  <li class="nav-item">
-                            <a class="nav-link" href="#"><img src="{{ asset('images/user.svg') }}" alt="User"></a>
-                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/login') }}"><img src="{{ asset('images/user.svg') }}" alt="User"></a>
+                        </li> 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/cart') }}"><img src="{{ asset('images/cart.svg') }}" alt="Cart"></a>
                         </li>

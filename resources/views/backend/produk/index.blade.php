@@ -22,6 +22,7 @@
                                         <th scope="col">Harga</th>
                                         <th scope="col">Deskripsi</th>
                                         <th scope="col">Gambar</th>
+                                        <th scope="col">Kategori</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
@@ -37,6 +38,7 @@
                                              alt="{{ $data->nama_produk }}" 
                                              style="width: auto; height: auto; max-height: 150px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
                                         </td>
+                                        <td>{{ $data->category ? $data->category->nama_kategori : 'Tidak ada kategori' }}</td>
                                         <td>
                                             <a href="{{ url('/backend/produk/edit/'.$data->id) }}" class="btn btn-outline-info btn-sm"><i class="fa fa-pencil"></i> Edit</a>
                                             <a href="{{ url('/backend/produk/destroy/'.$data->id) }}" class="btn btn-outline-info btn-sm"><i class="fa fa-trash"></i> Hapus</a>

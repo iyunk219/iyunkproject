@@ -17,4 +17,8 @@ class Produk extends Model
     {
         return $this->hasMany(Pemesanan::class);
     }
+     public function category()
+    {
+        return $this->belongsTo(Category::class, 'id_category');
+    }
 }
