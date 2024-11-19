@@ -53,7 +53,7 @@
                             <a class="nav-link" href="{{ url('/login') }}"><img src="{{ asset('images/user.svg') }}" alt="User"></a>
                         </li> 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/cart') }}"><img src="{{ asset('images/cart.svg') }}" alt="Cart"></a>
+                            <a class="nav-link" href="{{ url('/checkout') }}"><img src="{{ asset('images/cart.svg') }}" alt="Cart"></a>
                         </li>
                     </ul>
                 </div>

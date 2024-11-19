@@ -103,7 +103,7 @@
             <!-- Image Section -->
             <div class="col-lg-5">
                 <div class="img-wrap">
-                    <img src="images/why-choose-us-img.jpg" alt="Mengapa Memilih Kami" class="img-fluid">
+                    <img src="{{asset('images/why-choose-us-img.jpg')}}" alt="Mengapa Memilih Kami" class="img-fluid">
                 </div>
             </div><!-- End of Col LG 5 -->
 
