@@ -22,26 +22,27 @@
     <div class="container">
         <h2>Blog & Tips Furnitur</h2>
         <div class="row">
-
-            <!-- Blog Entries -->
 <div class="col-12 col-sm-6 col-md-4 mb-4">
     <div class="post-entry" onclick="toggleDescription('desc1')" style="cursor:pointer;">
-        <a href="#" class="post-thumbnail">
+        <a href="#" class="post-thumbnail" onclick="enlargeImage(this.querySelector('img')); return false;">
             <img src="{{ asset('images/115.JPG') }}" alt="Proses Pembuatan Kursi" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px;">
         </a>
         <div class="post-content-entry p-3">
             <h3 class="post-title">Proses Pembuatan Kursi dengan Gerindra</h3>
-            <div class="meta" id="desc1" style="display:none; margin-top: 10px;">
-                <span style="display: block; width: 200px; margin: 0 auto; text-align: center;">
-                    - Proses pembuatan kursi dengan menggunakan teknologi Gerindra melibatkan pengawasan ketat pada setiap tahap produksi.
-                </span>
+            <div class="meta" id="desc1">
+                <span>- Proses pembuatan kursi dengan menggunakan teknologi Gerindra melibatkan pengawasan ketat pada setiap tahap produksi.</span>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <img id="modalImage" src="" alt="Gambar Besar">
+</div>
             <div class="col-12 col-sm-6 col-md-4 mb-4">
                 <div class="post-entry" onclick="toggleDescription('desc2')" style="cursor:pointer;">
-                    <a href="#" class="post-thumbnail">
+                    <a href="#" class="post-thumbnail" onclick="enlargeImage(this.querySelector('img'));">
                         <img src="{{ asset('images/107.jpeg') }}" alt="Packing pemasangan jok busa pada kursi" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px;">
                     </a>
                     <div class="post-content-entry p-3">
@@ -55,7 +56,7 @@
 
             <div class='col-12 col-sm-6 col-md-4 mb-4'>
                 <div class='post-entry' onclick='toggleDescription("desc3")' style='cursor:pointer;'>
-                    <a href="#" class='post-thumbnail'>
+                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img'));">
                         <img src="{{ asset('images/114.JPG') }}" alt="Tahap Finishing Kursi" style='width: 200px; height: 200px; object-fit: cover; border-radius: 10px;'>
                     </a>
                     <div class='post-content-entry p-3'>
@@ -69,7 +70,7 @@
 
             <div class='col-12 col-sm-6 col-md-4 mb-4'>
                 <div class='post-entry' onclick='toggleDescription("desc4")' style='cursor:pointer;'>
-                    <a href="#" class='post-thumbnail'>
+                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img'));">
                         <img src="{{ asset('images/58.jpeg') }}" alt="Pengecekan Ukuran Kursi" style='width: 200px; height: 200px; object-fit: cover; border-radius: 10px;'>
                     </a>
                     <div class='post-content-entry p-3'>
@@ -83,7 +84,7 @@
 
             <div class='col-12 col-sm-6 col-md-4 mb-4'>
                 <div class='post-entry' onclick='toggleDescription("desc5")' style='cursor:pointer;'> 
-                    <a href="#" class='post-thumbnail'> 
+                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img'));"> 
                         <img src="{{ asset('images/59.jpeg') }}" alt="Packing Kursi dengan Aman" style='width: 200px; height: 200px; object-fit: cover; border-radius: 10px;'> 
                     </a> 
                     <div class='post-content-entry p-3'> 
@@ -97,7 +98,7 @@
 
             <div class='col-12 col-sm-6 col-md-4 mb-4'>
                 <div class='post-entry' onclick='toggleDescription("desc6")' style='cursor:pointer;'> 
-                    <a href="#" class='post-thumbnail'> 
+                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img'));"> 
                         <video width='200px' controls style='max-height:220px;border-radius:.5rem;'> 
                             <source src="{{ asset('images/99.mp4') }}" type='video/mp4'> Your browser does not support the video tag. 
                         </video> 
@@ -116,7 +117,7 @@
             <!-- Example for Pengiriman Barang -->
             <div class='col-12 col-sm-6 col-md-4 mb-4'>
                 <div class='post-entry' onclick='toggleDescription("desc7")' style='cursor:pointer;'> 
-                    <a href="#" class='post-thumbnail'> 
+                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img'));"> 
                         <img src="{{ asset('images/72.JPEG') }}" alt="Proses Pengiriman Barang" style='width: 200px; height: 200px; object-fit: cover; border-radius: 10px;'> 
                     </a> 
                     <div class='post-content-entry p-3'> 
@@ -133,7 +134,7 @@
             <!-- Example for Proses Amplas Kursi -->
             <div class='col-12 col-sm-6 col-md-4 mb-4'>
                 <div class='post-entry' onclick='toggleDescription("desc8")' style='cursor:pointer;'> 
-                    <a href="#" class='post-thumbnail'> 
+                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img'));"> 
                         <img src="{{ asset('images/116.JPG') }}" alt="Proses Amplas Kursi" style='width: 200px; height: 200px; object-fit: cover; border-radius: 10px;'> 
                     </a> 
                     <div class='post-content-entry p-3'> 
@@ -150,7 +151,7 @@
             <!-- Example for Proses Servis Kursi -->
             <div class='col-12 col-sm-6 col-md-4 mb-4'>
                 <div class='post-entry' onclick='toggleDescription("desc9")' style='cursor:pointer;'> 
-                    <a href="#" class='post-thumbnail'> 
+                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img'));"> 
                         <img src="{{ asset('images/113.JPG') }}" alt="Proses Servis Kursi" style='width: 200px; height: 200px; object-fit: cover; border-radius: 10px;'> 
                     </a> 
                     <div class='post-content-entry p-3'> 
@@ -225,30 +226,38 @@
     </diV><!-- End Container -->
 </diV><!-- End Blog Section -->
 <script>
-function toggleDescription(id) {
-    var desc = document.getElementById(id);
-    if (desc.style.display === "none") {
-        desc.style.display = "block";
-    } else {
-        desc.style.display = "none";
-    }
+function enlargeImage(img) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    
+    modalImg.src = img.src; // Setel sumber gambar modal
+    modal.style.display = "flex"; // Tampilkan modal
+}
+
+function closeModal() {
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "none"; // Sembunyikan modal saat diklik
 }
 </script>
 <style>
-    .post-thumbnail img {
-        width: 100%; /* Mengambil lebar penuh dari kontainer */
-        height: 200px; /* Tinggi tetap */
-        object-fit: cover;
-        border-radius: 10px;
-    }
+.modal {
+    display: none; /* Modal disembunyikan secara default */
+    position: fixed; /* Tetap di posisi tetap */
+    z-index: 1000; /* Di atas konten lainnya */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Latar belakang transparan hitam */
+    justify-content: center; /* Pusatkan konten */
+    align-items: center; /* Pusatkan konten secara vertikal */
+}
 
-    .description {
-        display: block;
-        width: 100%; /* Mengambil lebar penuh dari kontainer */
-        max-width: 200px; /* Lebar maksimum untuk deskripsi */
-        margin: 0 auto;
-        text-align: center;
-    }
+/* Gaya untuk gambar dalam modal */
+.modal img {
+    max-width: 90%; /* Maksimal lebar gambar */
+    max-height: 90%; /* Maksimal tinggi gambar */
+}
     </style>
 
 <script src="path/to/bootstrap.bundle.js"></script> 
