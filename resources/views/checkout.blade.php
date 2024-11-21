@@ -124,8 +124,63 @@
                         <label for='alamat'>Alamat</label>
                         <textarea id='alamat' name='alamat' required rows='3' class='form-control'></textarea>
                     </div>
-
-                    
+                    <div class='form-group'>
+                        <label for='kelurahan'>Kelurahan</label>
+                        <textarea id='kelurahan' name='kelurahan' required rows='3' class='form-control'></textarea>
+                    </div>
+                    <div class='form-group'>
+                        <label for='kecamatan'>Kecamatan</label>
+                        <textarea id='kecamatan' name='kecamatan' required rows='3' class='form-control'></textarea>
+                    </div>
+                    <div class='form-group'>
+                        <label for='kota'>Kota / Kabupaten</label>
+                        <textarea id='kota' name='kota' required rows='3' class='form-control'></textarea>
+                    </div>
+                     <div class='form-group'>
+                    <label for='provinsi'>Provinsi</label>
+                    <select id='provinsi' name='provinsi' required class='form-control'>
+                        <option value='' disabled selected>Pilih Provinsi</option>
+                        <option value='Aceh'>Aceh</option>
+                        <option value='Bali'>Bali</option>
+                        <option value='Banten'>Banten</option>
+                        <option value='Bengkulu'>Bengkulu</option>
+                        <option value='Gorontalo'>Gorontalo</option>
+                        <option value='Jakarta'>DKI Jakarta</option>
+                        <option value='Jambi'>Jambi</option>
+                        <option value='Jawa Barat'>Jawa Barat</option>
+                        <option value='Jawa Tengah'>Jawa Tengah</option>
+                        <option value='Jawa Timur'>Jawa Timur</option>
+                        <option value='Kalimantan Barat'>Kalimantan Barat</option>
+                        <option value='Kalimantan Selatan'>Kalimantan Selatan</option>
+                        <option value='Kalimantan Tengah'>Kalimantan Tengah</option>
+                        <option value='Kalimantan Timur'>Kalimantan Timur</option>
+                        <option value='Kepulauan Bangka Belitung'>Kepulauan Bangka Belitung</option>
+                        <option value='Kepulauan Riau'>Kepulauan Riau</option>
+                        <option value='Lampung'>Lampung</option>
+                        <option value='Maluku'>Maluku</option>
+                        <option value='Maluku Utara'>Maluku Utara</option>
+                        <option value='Nusa Tenggara Barat'>Nusa Tenggara Barat</option>
+                        <option value='Nusa Tenggara Timur'>Nusa Tenggara Timur</option>
+                        <option value='Papua'>Papua</option>
+                        <option value='Papua Barat'>Papua Barat</option>
+                        <option value='Riau'>Riau</option>
+                        <option value='Sulawesi Barat'>Sulawesi Barat</option>
+                        <option value='Sulawesi Selatan'>Sulawesi Selatan</option>
+                        <option value='Sulawesi Tengah'>Sulawesi Tengah</option>
+                        <option value='Sulawesi Utara'>Sulawesi Utara</option>
+                        <option value='Sumatera Barat'>Sumatera Barat</option>
+                        <option value='Sumatera Selatan'>Sumatera Selatan</option>
+                        <option value='Sumatera Utara'>Sumatera Utara</option>
+                    </select>
+                </div>
+                    <div class='form-group'>
+                        <label for='email'>Email</label>
+                        <textarea id='email' name='email' required rows='3' class='form-control'></textarea>
+                    </div>
+                    <div class='form-group'>
+                        <label for='catatan_pesanan'>Catatan Pesanan (Opsional)</label>
+                        <textarea id='catatan_pesanan' name='catatan_pesanan' rows='2' class='form-control'></textarea>
+                    </div>
 
                     <!-- Tombol Kirim -->
                     <button type='submit' class='btn btn-black btn-lg py-3'>Kirim Detail Penagihan</button>
@@ -162,7 +217,7 @@
                 </div>
 
                 <!-- Tombol Lanjutkan ke Pembayaran -->
-                <a href="{{ url('/checkout') }}" class='btn btn-black btn-lg py-3 btn-block'>Lanjutkan ke Pembayaran</a>
+                <a href="" class='btn btn-black btn-lg py-3 btn-block'>Bayar</a>
 
             </div> <!-- End of Pesanan Anda -->
 

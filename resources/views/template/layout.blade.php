@@ -15,6 +15,37 @@
     <link rel="stylesheet" href="{{asset('asset/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css')}}">
     <link href="{{asset('asset/css/tiny-slider.css')}}" rel="stylesheet">
     <link href="{{asset('asset/css/style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .footer-section {
+            background-color: #3b5d50;
+            padding: 40px 20px;
+            color: #fff;
+        }
+        .footer-logo {
+            color: #f0e68c; /* Warna logo */
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .address-section {
+            color: #f0e68c; /* Warna untuk alamat */
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .contact-info {
+            color: #e0e0e0; /* Warna untuk informasi kontak */
+            font-size: 14px;
+        }
+        .social-icon {
+            font-size: 30px; /* Ukuran ikon */
+            color: #f0e68c; /* Warna ikon */
+            margin-right: 15px; /* Spasi antar ikon */
+            transition: color 0.3s; /* Efek transisi saat hover */
+        }
+        .social-icon:hover {
+            color: #e0e0e0; /* Warna saat hover */
+        }
+    </style>
     <title>Jayamahe Furniture</title>
 </head>
 
@@ -63,40 +94,54 @@
         <!-- End Header/Navigation -->
 
           @yield('content')
-<footer class="footer-section" style="background-color: #3b5d50; padding: 40px 20px; color: #fff;">
+<footer class="footer-section">
     <div class="container">
         <div class="row text-center">
-            <!-- Column 1: Company Name -->
+            <!-- Column 1: Company Name and Description -->
             <div class="col-md-4 mb-4">
-                <h2 class="footer-logo" style="font-size: 24px; font-weight: bold; color: #f0e68c;">Jayamahe Furniture</h2>
-                <p style="font-size: 14px; color: #e0e0e0;">Furnitur berkualitas untuk rumah Anda.</p>
+                <h2 class="footer-logo">Jayamahe Furniture</h2>
+                <p style="font-size: 14px;">Selamat datang di Jayamahe Furniture, toko online pilihan untuk semua kebutuhan furnitur dan dekorasi rumah Anda.</p>
+                <p style="font-size: 14px;">Temukan beragam pilihan kursi makan, kursi santai, dan bangku untuk menciptakan ruang makan yang nyaman.</p>
             </div>
 
             <!-- Column 2: Address -->
             <div class="col-md-4 mb-4">
-                <p style="font-size: 24px; font-weight: bold; color: #f0e68c;">Alamat: </p>
-                <h2 style="font-size: 14px; color: #e0e0e0;">Jl gsuyg, Klepu, Jepara, Jawa Tengah, Indonesia</h2>
+                <p class="address-section">Alamat:</p>
+                <h2 style="font-size: 14px; color: #e0e0e0;">Jl, Ratu Kalinyamat Km 03, Rt05/Rw01 Blingoh, Donorojo, Jepara, Jawa Tengah, Indonesia</h2>
+                <p style="font-size: 14px; color: #e0e0e0;">Senin - Sabtu: 08:00 - 18:00</p>
             </div>
 
-            <!-- Column 3: Social Media -->
+            <!-- Column 3: Contact Information and Social Media -->
             <div class="col-md-4 mb-4 text-left">
-                <p style="font-size: 24px; font-weight: bold; color: #f0e68c;">Akun Sosial Media</p>
-                <div class="list-unstyled d-flex justify-content-center"> <!-- Flexbox for alignment -->
-                    <a href="https://www.tokopedia.com/" title="Tokopedia" style="margin-right: 15px;">
-                        <img src="images/tokped.png" alt="Logo Tokopedia" style="width: 30px; height: auto;">
+                <p style="font-size: 24px; font-weight: bold; color: #f0e68c;">Akun Sosial Media:</p>
+               
+                <p class="contact-info">Jika Anda ada pertanyaan terkait pemesanan, produk atau layanan kami yang lainnya. Sapa kami di kontak dibawah ini ya!</p>
+                <p class="contact-info">Phone: +628889879872</p>
+                <p class="contact-info">Email: hello@jayamahefurnitur.com</p>
+                 <div class="list-unstyled d-flex justify-content-center"> <!-- Flexbox for alignment -->
+<!-- Logo Tokopedia -->
+                   <!--  <a href="https://www.tokopedia.com/" title="Tokopedia" style="margin-right: 15px;">
+                        <img src="https://seeklogo.com/vector-logo/339743/tokopedia" alt="Logo Tokopedia" style="width: 30px; height: auto;">
+                    </a>  -->
+                    <!-- Ikon Instagram -->
+                    <a href="#" title="Instagram" class="social-icon">
+                        <i class="fab fa-instagram"></i> <!-- Ikon Instagram -->
                     </a>
-                    <a href="#" title="Instagram" style="margin-right: 15px; color: #f0e68c;">
-                        <img src="images/ig.png" alt="Logo Instagram" style="width: 30px; height: auto;">
+                    <!-- Ikon WhatsApp -->
+                    <a href="https://wa.me/6281234567890" title="WhatsApp" class="social-icon">
+                        <i class="fab fa-whatsapp"></i> <!-- Ikon WhatsApp -->
                     </a>
-                    <a href="https://wa.me/6281234567890" title="WhatsApp" style="color: #f0e68c;">
-                        <img src="images/we.png" alt="Logo WhatsApp" style="width: 30px; height: auto;">
+                    <!-- Ikon TikTok -->
+                    <a href="#" title="TikTok" class="social-icon">
+                        <i class="fab fa-tiktok"></i> <!-- Ikon TikTok -->
                     </a>
                 </div>
             </div>
         </div>
 
+        <!-- Bottom Section -->
         <div style="margin-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.3); padding-top: 10px;">
-            <p style="text-align:center; font-size: 12px;">Hak Cipta &copy;<script>document.write(new Date().getFullYear());</script>. Semua Hak Dilindungi.</p>
+            <p style="text-align:center; font-size: 12px;">Hak Cipta &copy;<script>document.write(new Date().getFullYear());</script> Jayamahe Furniture. Semua Hak Dilindungi.</p>
         </div>
     </div>
 </footer>

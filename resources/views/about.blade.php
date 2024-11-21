@@ -11,12 +11,12 @@
 								<p><a href="" class="btn btn-secondary me-2">Belanja Sekarang</a><a href="#" class="btn btn-white-outline">Jelajahi</a></p>
 							</div>
 						</div>
-<div class="col-lg-7">
-    <div class="hero-img-wrap" style="text-align: right; ""> <!-- Align text to the right -->
-        <img src="images/BG.png" alt="Background Image" style="width: 90%; height: auto; object-fit: cover; border: 2px solid #ccc; margin-left: auto; display: block;">
-    </div>
-</div>
-					</div>
+            <div class="col-lg-7">
+                <div class="hero-img-wrap" style="text-align: right;">
+                    <img src="images/222.jpg" alt="Background Image" style="width: 100%; height: auto; object-fit: cover;  margin-left: auto; display: block;">
+                </div>
+            </div>	
+            		</div>
 				</div>
 			</div>
 	<div class="why-choose-section">
@@ -117,7 +117,7 @@
             <!-- Image Section -->
             <div class="col-lg-5">
                 <div class="img-wrap">
-                    <img src="{{asset('images/why-choose-us-img.jpg')}}" alt="Mengapa Memilih Kami" class="img-fluid full-width-image">
+                    <img src="{{asset('images/13.jpeg')}}" alt="Mengapa Memilih Kami" class="img-fluid full-width-image">
                 </div>
             </div><!-- End of Col LG 5 -->
 
@@ -126,32 +126,32 @@
 </div><!-- End of Why Choose Section -->
 <div class="products-section">
     <h2 class="section-title">Produk Mebel Kami</h2>
-    <p>Kami memproduksi furniture berkualitas tinggi untuk berbagai kebutuhan, termasuk rumah, hotel, villa, restoran, dan perkantoran. Bahan baku utama kami adalah kayu jati pilihan, namun kami juga menggunakan kayu mahoni, mindi, bayur, dan jenis kayu tropis lainnya.</p>
+    <p>Kami memproduksi furnitur berkualitas tinggi yang dirancang untuk memenuhi berbagai kebutuhan, baik untuk rumah tinggal, hotel, villa, restoran, maupun kantor. Kami selalu mengutamakan kualitas dalam setiap produk yang kami hasilkan, sehingga pelanggan dapat merasakan kenyamanan dan keindahan di setiap detailnya. Bahan baku utama yang kami gunakan adalah kayu jati pilihan, yang terkenal akan kekuatan dan daya tahannya. Selain kayu jati, kami juga menggunakan berbagai jenis kayu lainnya seperti kayu mahoni, mindi, trembesi, serta berbagai jenis kayu tropis lainnya. Setiap jenis kayu ini dipilih dengan cermat untuk memastikan bahwa furnitur yang kami hasilkan tidak hanya indah dipandang, tetapi juga tahan lama dan fungsional. Dengan komitmen terhadap kualitas dan keindahan, kami berusaha untuk memberikan solusi furnitur terbaik bagi setiap pelanggan kami.</p>
 
     <p>Kami dapat mengerjakan berbagai model furniture karena kami adalah tukang kayu berpengalaman. Ada tiga kategori desain yang kami tawarkan:</p>
     
-    <ul class="product-list">
-        <li>
-            <strong class="clickable" onclick="toggleDescription('desc-minimalis')">Mebel Minimalis:</strong>
-            <div id="desc-minimalis" class="description" style="display: none;">
-                Mebel minimalis dirancang dengan kesederhanaan dan fungsionalitas dalam pikiran. Setiap potongan dirancang untuk mengoptimalkan ruang tanpa mengorbankan gaya. Cocok untuk ruang tamu modern, mebel ini menghadirkan keanggunan yang bersih dan tidak rumit.
-            </div>
-        </li>
-        <li>
-            <strong class="clickable" onclick="toggleDescription('desc-ukiran')">Mebel Ukiran Jepara:</strong>
-            <div id="desc-ukiran" class="description" style="display: none;">
-                Mebel ukiran Jepara merupakan simbol keindahan dan kerajinan tangan yang tinggi. Setiap detail ukiran dikerjakan dengan penuh perhatian oleh pengrajin berpengalaman. Produk ini tidak hanya berfungsi sebagai furniture tetapi juga sebagai karya seni yang menambah nilai estetika pada ruangan Anda.
-            </div>
-        </li>
-        <li>
-            <strong class="clickable" onclick="toggleDescription('desc-custom')">Mebel Desain Custom:</strong>
-            <div id="desc-custom" class="description" style="display: none;">
-                Kami memahami bahwa setiap pelanggan memiliki kebutuhan unik. Dengan layanan desain custom kami, Anda dapat menciptakan furniture sesuai dengan spesifikasi dan gaya pribadi Anda. Dari pemilihan bahan hingga desain akhir, kami bekerja sama dengan Anda untuk mewujudkan produk yang sempurna.
-            </div>
-        </li>
-    </ul>
+   <ul class="product-list">
+    <li>
+        <strong class="clickable" onclick="toggleDescription('desc-minimalis')">Mebel Minimalis:</strong>
+        <div id="desc-minimalis" class="description" style="display: none;">
+            Mebel minimalis dirancang dengan fokus pada kesederhanaan dan fungsi. Setiap potongan dibuat untuk memaksimalkan ruang tanpa mengorbankan estetika. Mebel ini sangat cocok untuk ruang tamu modern, memberikan tampilan yang bersih dan elegan.
+        </div>
+    </li>
+    <li>
+        <strong class="clickable" onclick="toggleDescription('desc-ukiran')">Mebel Ukiran Jepara:</strong>
+        <div id="desc-ukiran" class="description" style="display: none;">
+            Mebel ukiran Jepara dikenal karena keindahan dan keterampilannya. Setiap detail ukiran dikerjakan dengan teliti oleh pengrajin yang ahli. Produk ini tidak hanya berfungsi sebagai furnitur, tetapi juga sebagai karya seni yang menambah keindahan ruangan Anda.
+        </div>
+    </li>
+    <li>
+        <strong class="clickable" onclick="toggleDescription('desc-custom')">Mebel Desain Kustom:</strong>
+        <div id="desc-custom" class="description" style="display: none;">
+            Kami menyadari bahwa setiap pelanggan memiliki kebutuhan yang unik. Dengan layanan desain kustom kami, Anda dapat membuat furnitur sesuai dengan spesifikasi dan gaya pribadi Anda. Dari pemilihan bahan hingga desain akhir, kami akan bekerja sama dengan Anda untuk menciptakan produk yang sempurna.
+        </div>
+    </li>
+</ul>
 
-    <p>Kami percaya bahwa setiap produk yang kami buat memiliki nilai seni dan kualitas tinggi yang dapat memenuhi kebutuhan pelanggan kami.</p>
+<p>Kami yakin bahwa setiap produk yang kami buat memiliki nilai seni dan kualitas tinggi yang dapat memenuhi kebutuhan pelanggan kami.</p>
 </div>
 
 <div class="testimonial-section">

@@ -12,7 +12,13 @@
                         Setiap produk dirancang untuk memberikan kenyamanan dan keindahan di setiap sudut rumah Anda.</p>
                 </div>
             </div>
+            <div class="col-lg-7">
+                <div class="hero-img-wrap" style="text-align: right;">
+                    <img src="images/222.jpg" alt="Background Image" style="width: 87%; height: auto; object-fit: cover;  margin-left: auto; display: block;">
+                </div>
+            </div>
         </div>
+                      
     </div>
 </div>
 <div class="untree_co-section product-section before-footer-section" style="background-color: #f8f9fa; padding: 40px 0;">

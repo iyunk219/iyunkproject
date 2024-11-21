@@ -10,11 +10,11 @@
 			     <p><a href="#" class="btn btn-secondary me-2">Belanja Sekarang</a><a href="#" class="btn btn-white-outline">Jelajahi</a></p>
 			 </div>
 		  </div>
-        <div class="col-lg-7">
-            <div class="hero-img-wrap">
-                 <img src="images/couch.png" alt="Gambar Sofa" class="img-fluid">
-            </div>
-        </div>
+            <div class="col-lg-7">
+                <div class="hero-img-wrap" style="text-align: right;">
+                    <img src="images/222.jpg" alt="Background Image" style="width: 90%; height: auto; object-fit: cover;  margin-left: auto; display: block;">
+                </div>
+            </div>  
 	   </div>
 	    </div>
 	</div>
@@ -22,28 +22,31 @@
     <div class="container">
         <h2>Blog & Tips Furnitur</h2>
         <div class="row">
-<div class="col-12 col-sm-6 col-md-4 mb-4">
-    <div class="post-entry" onclick="toggleDescription('desc1')" style="cursor:pointer;">
-        <a href="#" class="post-thumbnail" onclick="enlargeImage(this.querySelector('img')); return false;">
-            <img src="{{ asset('images/115.JPG') }}" alt="Proses Pembuatan Kursi" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px;">
-        </a>
-        <div class="post-content-entry p-3">
-            <h3 class="post-title">Proses Pembuatan Kursi dengan Gerindra</h3>
-            <div class="meta" id="desc1">
-                <span>- Proses pembuatan kursi dengan menggunakan teknologi Gerindra melibatkan pengawasan ketat pada setiap tahap produksi.</span>
+            <!-- Blog Post 1 -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="post-entry" onclick="toggleDescription('desc1')" style="cursor:pointer;">
+                    <a href="#" class="post-thumbnail" onclick="enlargeImage(this.querySelector('img')); return false;">
+                        <img src="{{ asset('images/115.JPG') }}" alt="Proses Pembuatan Kursi" style="width: 300px; height: 100px; object-fit: cover; border-radius: 10px;">
+                    </a>
+                    <div class="post-content-entry p-3">
+                        <h3 class="post-title">Proses Pembuatan Kursi dengan Gerindra</h3>
+                        <div class="meta" id="desc1" style="display:none; margin-top: 10px;">
+                            <span>- Proses pembuatan kursi dengan menggunakan teknologi Gerindra melibatkan pengawasan ketat pada setiap tahap produksi.</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
 
-<!-- Modal -->
-<div id="imageModal" class="modal" onclick="closeModal()">
-    <img id="modalImage" src="" alt="Gambar Besar">
-</div>
+            <!-- Modal -->
+            <div id="imageModal" class="modal" onclick="closeModal()">
+                <img id="modalImage" src="" alt="Gambar Besar" style="max-width: 90%; max-height: 90%;">
+            </div>
+
+            <!-- Blog Post 2 -->
             <div class="col-12 col-sm-6 col-md-4 mb-4">
                 <div class="post-entry" onclick="toggleDescription('desc2')" style="cursor:pointer;">
-                    <a href="#" class="post-thumbnail" onclick="enlargeImage(this.querySelector('img'));">
-                        <img src="{{ asset('images/107.jpeg') }}" alt="Packing pemasangan jok busa pada kursi" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px;">
+                    <a href="#" class="post-thumbnail" onclick="enlargeImage(this.querySelector('img')); return false;">
+                        <img src="{{ asset('images/107.jpeg') }}" alt="Packing pemasangan jok busa pada kursi" style="width: 300px; height: 200px; object-fit: cover; border-radius: 10px;">
                     </a>
                     <div class="post-content-entry p-3">
                         <h3 class="post-title">Proses Pemasangan Jok Busa pada Kursi</h3>
@@ -54,10 +57,11 @@
                 </div>
             </div>
 
+            <!-- Blog Post 3 -->
             <div class='col-12 col-sm-6 col-md-4 mb-4'>
                 <div class='post-entry' onclick='toggleDescription("desc3")' style='cursor:pointer;'>
-                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img'));">
-                        <img src="{{ asset('images/114.JPG') }}" alt="Tahap Finishing Kursi" style='width: 200px; height: 200px; object-fit: cover; border-radius: 10px;'>
+                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img')); return false;">
+                        <img src="{{ asset('images/114.JPG') }}" alt="Tahap Finishing Kursi" style='width: 300px; height: 200px; object-fit: cover; border-radius: 10px;'>
                     </a>
                     <div class='post-content-entry p-3'>
                         <h3 class='post-title'>Tahap Finishing Kursi</h3>
@@ -68,24 +72,26 @@
                 </div> 
             </div>
 
+            <!-- Blog Post 4 -->
             <div class='col-12 col-sm-6 col-md-4 mb-4'>
                 <div class='post-entry' onclick='toggleDescription("desc4")' style='cursor:pointer;'>
-                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img'));">
-                        <img src="{{ asset('images/58.jpeg') }}" alt="Pengecekan Ukuran Kursi" style='width: 200px; height: 200px; object-fit: cover; border-radius: 10px;'>
+                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img')); return false;">
+                        <img src="{{ asset('images/58.jpeg') }}" alt="Pengecekan Ukuran Kursi" style='width: 300px; height: 200px; object-fit: cover; border-radius: 10px;'>
                     </a>
                     <div class='post-content-entry p-3'>
                         <h3 class='post-title'>Pengecekan Ulang Ukuran Kursi</h3>
-                        <div class="meta" id="desc4" style="display:none; margin-top: 10px;">
-                            <span>- Melakukan pengecekan ulang untuk memastikan ukuran kursi sesuai dengan spesifikasi yang diinginkan.</span>
+                        <div id='desc4' style='display:none; margin-top: 10px;'>
+                            - Melakukan pengecekan ulang untuk memastikan ukuran kursi sesuai dengan spesifikasi yang diinginkan.
                         </div>
                     </div> 
                 </div> 
             </div>
 
+            <!-- Blog Post 5 -->
             <div class='col-12 col-sm-6 col-md-4 mb-4'>
                 <div class='post-entry' onclick='toggleDescription("desc5")' style='cursor:pointer;'> 
-                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img'));"> 
-                        <img src="{{ asset('images/59.jpeg') }}" alt="Packing Kursi dengan Aman" style='width: 200px; height: 200px; object-fit: cover; border-radius: 10px;'> 
+                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img')); return false;"> 
+                        <img src="{{ asset('images/59.jpeg') }}" alt="Packing Kursi dengan Aman" style='width: 300px; height: 200px; object-fit: cover; border-radius: 10px;'> 
                     </a> 
                     <div class='post-content-entry p-3'> 
                         <h3 class='post-title'>Packing Kursi dengan Aman</h3> 
@@ -96,10 +102,11 @@
                 </div> 
             </div>
 
+            <!-- Blog Post 6 -->
             <div class='col-12 col-sm-6 col-md-4 mb-4'>
                 <div class='post-entry' onclick='toggleDescription("desc6")' style='cursor:pointer;'> 
-                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img'));"> 
-                        <video width='200px' controls style='max-height:220px;border-radius:.5rem;'> 
+                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('video')); return false;"> 
+                        <video width='100%' controls style='max-height:auto;border-radius:.5rem;'> 
                             <source src="{{ asset('images/99.mp4') }}" type='video/mp4'> Your browser does not support the video tag. 
                         </video> 
                     </a> 
@@ -113,12 +120,11 @@
                 </div> 
             </div>
 
-            <!-- Additional Entries -->
-            <!-- Example for Pengiriman Barang -->
+            <!-- Blog Post 7 -->
             <div class='col-12 col-sm-6 col-md-4 mb-4'>
                 <div class='post-entry' onclick='toggleDescription("desc7")' style='cursor:pointer;'> 
-                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img'));"> 
-                        <img src="{{ asset('images/72.JPEG') }}" alt="Proses Pengiriman Barang" style='width: 200px; height: 200px; object-fit: cover; border-radius: 10px;'> 
+                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img')); return false;"> 
+                        <img src="{{ asset('images/72.JPEG') }}" alt="Proses Pengiriman Barang" style='width: 300px; height: 200px; object-fit: cover; border-radius: 10px;'> 
                     </a> 
                     <div class='post-content-entry p-3'> 
                         <h3 style='font-size: 18px; color: #333; font-weight: bold;'> 
@@ -131,40 +137,40 @@
                 </div> 
             </div>
 
-            <!-- Example for Proses Amplas Kursi -->
+            <!-- Blog Post 8 -->
             <div class='col-12 col-sm-6 col-md-4 mb-4'>
                 <div class='post-entry' onclick='toggleDescription("desc8")' style='cursor:pointer;'> 
-                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img'));"> 
-                        <img src="{{ asset('images/116.JPG') }}" alt="Proses Amplas Kursi" style='width: 200px; height: 200px; object-fit: cover; border-radius: 10px;'> 
+                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img')); return false;"> 
+                        <img src="{{ asset('images/116.JPG') }}" alt="Proses Amplas Kursi" style='width: 300px; height: 200px; object-fit: cover; border-radius: 10px;'> 
                     </a> 
                     <div class='post-content-entry p-3'> 
                         <h3 style='font-size: 18px; color:#333;font-weight:bold;'> 
                             Proses Amplas Kursi
                         </h3> 
-                        <div id='desc8' style='display:none;margin-top: 10px;'> 
-                            - Proses amplas kursi dilakukan untuk mendapatkan permukaan yang halus dan siap dicat. 
-                        </div> 
-                    </div> 
-                </div> 
-            </div>
-
-            <!-- Example for Proses Servis Kursi -->
-            <div class='col-12 col-sm-6 col-md-4 mb-4'>
-                <div class='post-entry' onclick='toggleDescription("desc9")' style='cursor:pointer;'> 
-                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img'));"> 
-                        <img src="{{ asset('images/113.JPG') }}" alt="Proses Servis Kursi" style='width: 200px; height: 200px; object-fit: cover; border-radius: 10px;'> 
-                    </a> 
-                    <div class='post-content-entry p-3'> 
-                        <h3 style='font-size: 18px; color:#333;font-weight:bold;'> 
-                            Proses Servis Kursi
-                        </h3> 
-                        <div id ='desc9' style ='display:none;margin-top: 10px;'>  
-                            - Proses servis kursi mencakup perbaikan dan pemeliharaan untuk memastikan kenyamanan pengguna.  
+                        <div id ='desc8' style ='display:none;margin-top: 10px;'> 
+                            - Proses amplas kursi dilakukan untuk mendapatkan permukaan yang halus dan siap dicat.  
                         </div>  
                     </div>  
                 </div>  
             </div>
-        </div> <!-- End Row -->
+
+            <!-- Blog Post 9 -->
+            <div class='col-12 col-sm-6 col-md-4 mb-4'>
+                <div class='post-entry' onclick='toggleDescription("desc9")' style='cursor:pointer;'> 
+                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img')); return false;"> 
+                        <img src="{{ asset('images/113.JPG') }}" alt="Proses Servis Kursi" style='width: 300px; height: 200px; object-fit: cover; border-radius: 10px;'>  
+                    </a>  
+                    <div class='post-content-entry p-3'>  
+                        <h3 style='font-size: 18px; color:#333;font-weight:bold;'>  
+                            Proses Servis Kursi
+                        </h3>  
+                        <div id ='desc9' style ='display:none;margin-top: 10px;'>  
+                            - Proses servis kursi mencakup perbaikan dan pemeliharaan untuk memastikan kenyamanan pengguna.  
+                        </div>  
+                    </diV>  
+                </diV>  
+            </diV>
+        </diV><!-- End Row -->
 
         <!-- Tips Section -->
         <h2 class="text-center mt-5 mb-4">Tips Memilih Furnitur yang Tepat untuk Rumah Anda</h2>
@@ -226,17 +232,22 @@
     </diV><!-- End Container -->
 </diV><!-- End Blog Section -->
 <script>
+// JavaScript functions for toggling description and enlarging images
+function toggleDescription(id) {
+    var desc = document.getElementById(id);
+    desc.style.display = desc.style.display === 'none' ? 'block' : 'none';
+}
+
 function enlargeImage(img) {
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImage");
-    
-    modalImg.src = img.src; // Setel sumber gambar modal
-    modal.style.display = "flex"; // Tampilkan modal
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = img.src;
 }
 
 function closeModal() {
-    const modal = document.getElementById("imageModal");
-    modal.style.display = "none"; // Sembunyikan modal saat diklik
+    var modal = document.getElementById("imageModal");
+    modal.style.display = "none";
 }
 </script>
 <style>
@@ -246,8 +257,7 @@ function closeModal() {
     z-index: 1000; /* Di atas konten lainnya */
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 300px;
     background-color: rgba(0, 0, 0, 0.8); /* Latar belakang transparan hitam */
     justify-content: center; /* Pusatkan konten */
     align-items: center; /* Pusatkan konten secara vertikal */
