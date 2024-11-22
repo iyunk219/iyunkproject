@@ -2,175 +2,180 @@
 @section('content')
 <div class="hero">
     <div class="container">
-	   <div class="row justify-content-between">
-		  <div class="col-lg-5">
-			 <div class="intro-excerpt">
-			     <h1>Blog</h1>
-			     <p class="mb-4">Selamat datang di blog kami! Di sini, Anda akan menemukan berbagai artikel tentang produk kami, tips, dan panduan untuk membantu Anda dalam memilih produk yang tepat.</p>
-			     <p><a href="#" class="btn btn-secondary me-2">Belanja Sekarang</a><a href="#" class="btn btn-white-outline">Jelajahi</a></p>
-			 </div>
-		  </div>
-            <div class="col-lg-7">
-                <div class="hero-img-wrap" style="text-align: right;">
-                    <img src="images/222.jpg" alt="Background Image" style="width: 90%; height: auto; object-fit: cover;  margin-left: auto; display: block;">
-                </div>
-            </div>  
-	   </div>
-	    </div>
-	</div>
+       <div class="row justify-content-between">
+          <div class="col-lg-5">
+             <div class="intro-excerpt">
+                 <h1>Blog Kami!</h1>
+                 <p>Selamat datang di blog kami Di sini, Anda akan menemukan berbagai artikel tentang produk kami, tips, serta panduan untuk membantu Anda dalam memilih produk yang tepat.</p>
+                 <p><a href="#" class="btn btn-secondary me-2">Belanja Sekarang</a><a href="#" class="btn btn-white-outline">Jelajahi</a></p>
+             </div>
+          </div>
+
+          <!-- Gambar Background -->
+          <div class="col-lg-7">
+              <div class="hero-img-wrap" style="text-align:right;">
+                  <img src="images/222.jpg" alt="Background Image" style="width:90%; height:auto; object-fit:cover;margin-left:auto;display:block;">
+              </div>  
+          </div>  
+
+       </div><!-- End Row --> 
+    </div><!-- End Container -->
+</div><!-- End Hero Section -->
+
 <div class="blog-section">
     <div class="container">
-        <h2>Blog & Tips Furnitur</h2>
+        <!-- Judul Blog Post -->
+        <h2 class="text-center mt-5 mb-4">Blog & Tips Furnitur</h2>
+        
+        <!-- Kolom Artikel -->
         <div class="row">
-            <!-- Blog Post 1 -->
-            <div class="col-12 col-sm-6 col-md-4 mb-4">
-                <div class="post-entry" onclick="toggleDescription('desc1')" style="cursor:pointer;">
-                    <a href="#" class="post-thumbnail" onclick="enlargeImage(this.querySelector('img')); return false;">
-                        <img src="{{ asset('images/115.JPG') }}" alt="Proses Pembuatan Kursi" style="width: 300px; height: 100px; object-fit: cover; border-radius: 10px;">
-                    </a>
-                    <div class="post-content-entry p-3">
-                        <h3 class="post-title">Proses Pembuatan Kursi dengan Gerindra</h3>
-                        <div class="meta" id="desc1" style="display:none; margin-top: 10px;">
-                            <span>- Proses pembuatan kursi dengan menggunakan teknologi Gerindra melibatkan pengawasan ketat pada setiap tahap produksi.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Modal -->
-            <div id="imageModal" class="modal" onclick="closeModal()">
-                <img id="modalImage" src="" alt="Gambar Besar" style="max-width: 90%; max-height: 90%;">
-            </div>
-
-            <!-- Blog Post 2 -->
-            <div class="col-12 col-sm-6 col-md-4 mb-4">
-                <div class="post-entry" onclick="toggleDescription('desc2')" style="cursor:pointer;">
-                    <a href="#" class="post-thumbnail" onclick="enlargeImage(this.querySelector('img')); return false;">
-                        <img src="{{ asset('images/107.jpeg') }}" alt="Packing pemasangan jok busa pada kursi" style="width: 300px; height: 200px; object-fit: cover; border-radius: 10px;">
+            <!-- Artikel 1 : Proses Pembuatan Kursi dengan Gerindra -->
+            <div class='col-md-4 mb-4'>
+                <div class='post-entry' style='cursor:pointer;'>
+                    <!-- Thumbnail Artikel -->
+                    <a href='#' class='post-thumbnail' onclick='enlargeImage(this.querySelector("img"), "Proses Pembuatan Kursi dengan Gerindra"); return false;'>
+                        <img src="{{ asset('images/109.jpeg') }}" alt="Proses Pembuatan Kursi" style='width:410PX;height:200PX;object-fit:cover;border-radius:.5rem;' />
                     </a>
-                    <div class="post-content-entry p-3">
-                        <h3 class="post-title">Proses Pemasangan Jok Busa pada Kursi</h3>
-                        <div class="meta" id="desc2" style="display:none; margin-top: 10px;">
-                            <span>- Proses pemasangan jok busa pada kursi dilakukan dengan hati-hati untuk memastikan kenyamanan dan kualitas.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Blog Post 3 -->
-            <div class='col-12 col-sm-6 col-md-4 mb-4'>
-                <div class='post-entry' onclick='toggleDescription("desc3")' style='cursor:pointer;'>
-                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img')); return false;">
-                        <img src="{{ asset('images/114.JPG') }}" alt="Tahap Finishing Kursi" style='width: 300px; height: 200px; object-fit: cover; border-radius: 10px;'>
-                    </a>
+                    <!-- Isi Artikel -->
                     <div class='post-content-entry p-3'>
-                        <h3 class='post-title'>Tahap Finishing Kursi</h3>
-                        <div id='desc3' style='display:none; margin-top: 10px;'>
-                            - Menyelesaikan tahap akhir dalam pembuatan kursi untuk memastikan hasil yang sempurna.
-                        </div> 
-                    </div> 
-                </div> 
+                        <h3 class='post-title'>Proses Pembuatan Kursi dengan Gerindra</h3>
+                        <div id ='desc1' style='margin-top:.5rem;'>
+                            - Proses pembuatan kursi dengan teknologi Gerindra dilakukan dengan sangat teliti untuk memastikan kualitas tinggi pada setiap produk. Teknologi ini membantu pengrajin memproduksi kursi dengan lebih efisien dan akurat. Setiap tahap, mulai dari pemilihan bahan hingga perakitan, diawasi dengan ketat untuk menghindari kesalahan yang dapat mempengaruhi kenyamanan dan daya tahan kursi.
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <!-- Blog Post 4 -->
-            <div class='col-12 col-sm-6 col-md-4 mb-4'>
-                <div class='post-entry' onclick='toggleDescription("desc4")' style='cursor:pointer;'>
-                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img')); return false;">
-                        <img src="{{ asset('images/58.jpeg') }}" alt="Pengecekan Ukuran Kursi" style='width: 300px; height: 200px; object-fit: cover; border-radius: 10px;'>
+            <div class='col-md-4 mb-4'>
+                <div class='post-entry' style='cursor:pointer;'>
+                    <!-- Thumbnail Artikel -->
+                    <a href='#' class='post-thumbnail' onclick='enlargeImage(this.querySelector("img"), "Pengamplasan Kursi"); return false;'>
+                        <img src="{{ asset('images/116.JPG') }}" alt="Pengamplasan Kursi" style='width:410PX;height:200px;object-fit:cover;border-radius:.5rem;' />
                     </a>
+                    <!-- Isi Artikel -->
+                    <div class='post-content-entry p-3'>
+                        <h3 class='post-title'>Pengamplasan Kursi</h3>
+                        <div id='desc4' style='margin-top:.5rem;'>
+                            -Langkah selanjutnya pengamplasan kursi adalah langkah penting dalam pembuatan furnitur untuk membersihkan permukaan kayu dan membuatnya siap untuk finishing. Dilakukan setelah pemotongan dan perakitan, pengrajin menggunakan kertas amplas dengan beragam tingkat kekasaran untuk menghaluskan permukaan.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Artikel 2 : Proses Pemasangan Jok Busa pada Kursi -->
+            <div class='col-md-4 mb-4'>
+                <div class='post-entry' style='cursor:pointer;'>
+                    <!-- Thumbnail Artikel -->
+                    <a href='#' class='post-thumbnail' onclick='enlargeImage(this.querySelector("img"), "Proses Pemasangan Jok Busa pada Kursi"); return false;'>
+                        <img src="{{ asset('images/107.jpeg') }}" alt="Pemasangan Jok Busa pada Kursi" style='width:410PX;height:200px;object-fit:cover;border-radius:.5rem;' />
+                    </a>
+                    <!-- Isi Artikel -->
+                    <div class='post-content-entry p-3'>
+                        <h3 class='post-title'>Proses Pemasangan Jok Busa pada Kursi</h3>
+                        <div id='desc2' style='margin-top:.5rem;'>
+                            - Proses pemasangan jok busa pada kursi  yang bertujuan untuk memberikan kenyamanan dan kualitas. Pertama, bahan jok busa berkualitas dipilih dan dipotong sesuai ukuran kursi. Setelah itu, jok busa dipasang pada rangka kursi dengan menggunakan perekat yang kuat untuk memastikan posisinya tetap aman.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='col-md-4 mb-4'>
+                <div class='post-entry' style='cursor:pointer;'>
+                    <!-- Thumbnail Artikel -->
+                    <a href='#' class='post-thumbnail' onclick='enlargeImage(this.querySelector("img"), "Pengecekan Ulang Ukuran Kursi"); return false;'>
+                        <img src="{{ asset('images/58.jpeg') }}" alt="Pengecekan Ukuran Kursi" style='width:410PX;height:200px;object-fit:cover;border-radius:.5rem;' />
+                    </a>
+                    <!-- Isi Artikel -->
                     <div class='post-content-entry p-3'>
                         <h3 class='post-title'>Pengecekan Ulang Ukuran Kursi</h3>
-                        <div id='desc4' style='display:none; margin-top: 10px;'>
-                            - Melakukan pengecekan ulang untuk memastikan ukuran kursi sesuai dengan spesifikasi yang diinginkan.
+                        <div id='desc4' style='margin-top:.5rem;'>
+                            - Pengecekan ulang ukuran kursi bertujuan untuk memastikan bahwa kursi sesuai dengan spesifikasi yang diinginkan. Dalam proses ini, pengrajin mengukur panjang dan lebar kursi dengan teliti menggunakan alat ukur. Setelah itu, hasil pengukuran dibandingkan dengan ukuran yang telah ditentukan.
                         </div>
-                    </div> 
-                </div> 
+                    </div>
+                </div>
+            </div>
+            <div class='col-md-4 mb-4'>
+                <div class='post-entry' style='cursor:pointer;'>
+                    <!-- Thumbnail Artikel -->
+                    <a href='#' class='post-thumbnail' onclick='enlargeImage(this.querySelector("img"), "Tahap Servis"); return false;'>
+                        <img src="{{ asset('images/113.JPG') }}" alt="Tahap Servis Kursi" style='width:410PX;height:200px;object-fit:cover;border-radius:.5rem;' />
+                    </a>
+                    <!-- Isi Artikel -->
+                    <div class='post-content-entry p-3'>
+                        <h3 class='post-title'>Tahap Servis</h3>
+                        <div id='desc3' style='margin-top:.5rem;'>
+                            - Proses servis kursi, seperti pada kursi magic, melibatkan beberapa langkah untuk memastikan kursi tetap dalam kondisi baik. Pertama, pengrajin memeriksa kursi secara menyeluruh untuk menemukan kerusakan, seperti baut yang longgar. Jika ada masalah, pengrajin akan mengencangkan atau mengganti baut yang tidak berfungsi dengan baik.
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Blog Post 5 -->
-            <div class='col-12 col-sm-6 col-md-4 mb-4'>
-                <div class='post-entry' onclick='toggleDescription("desc5")' style='cursor:pointer;'> 
-                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img')); return false;"> 
-                        <img src="{{ asset('images/59.jpeg') }}" alt="Packing Kursi dengan Aman" style='width: 300px; height: 200px; object-fit: cover; border-radius: 10px;'> 
+            <div class='col-md-4 mb-4'>
+                <div class='post-entry' style='cursor:pointer;'>
+                    <!-- Thumbnail Artikel -->
+                    <a href='#' class='post-thumbnail' onclick='enlargeImage(this.querySelector("img"), "Tahap Finishing Kursi"); return false;'>
+                        <img src="{{ asset('images/114.JPG') }}" alt="Tahap Finishing Kursi" style='width:410PX;height:200px;object-fit:cover;border-radius:.5rem;' />
+                    </a>
+                    <!-- Isi Artikel -->
+                    <div class='post-content-entry p-3'>
+                        <h3 class='post-title'>Tahap Finishing </h3>
+                        <div id='desc3' style='margin-top:.5rem;'>
+                            - Tahap finishing  dengan teknik semprot  yang bertujuan untuk memberikan lapisan pelindung dan memperbaiki penampilan akhir produk. Dengan menggunakan teknik semprot, cat atau pernis dapat diaplikasikan secara merata, sehingga menghasilkan permukaan yang halus dan menarik.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artikel 5 : Packing Kursi dengan Aman -->
+            <div class='col-md-4 mb-4'>
+                <div class='post-entry' style='cursor:pointer;'> 
+                    <!-- Thumbnail Artikel -->
+                    <a href='#' class='post-thumbnail' onclick="enlargeImage(this.querySelector('img'), 'Packing Kursi dengan Aman'); return false;"> 
+                        <img src="{{ asset('images/59.jpeg') }}" alt="Packing Kursi dengan Aman" style="width:410PX;height:200px;object-fit:cover;border-radius:.5rem;"> 
                     </a> 
-                    <div class='post-content-entry p-3'> 
-                        <h3 class='post-title'>Packing Kursi dengan Aman</h3> 
-                        <div id='desc5' style='display:none; margin-top: 10px;'> 
+                    <!-- Isi Artikel -->
+                    <div class="post-content-entry p-3"> 
+                        <h3 class="post-title">Packing Kursi dengan Aman</h3> 
+                        <div id="desc5" style="margin-top:10px;"> 
                             - Proses packing dilakukan dengan hati-hati untuk mencegah kerusakan selama pengiriman.
                         </div> 
                     </div> 
                 </div> 
             </div>
-
-            <!-- Blog Post 6 -->
-            <div class='col-12 col-sm-6 col-md-4 mb-4'>
-                <div class='post-entry' onclick='toggleDescription("desc6")' style='cursor:pointer;'> 
-                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('video')); return false;"> 
-                        <video width='100%' controls style='max-height:auto;border-radius:.5rem;'> 
-                            <source src="{{ asset('images/99.mp4') }}" type='video/mp4'> Your browser does not support the video tag. 
-                        </video> 
-                    </a> 
-                    <div class='post-content-entry p-3'> 
-                        <h3 style='font-size:.9rem;color:#333;font-weight:bold;'> 
-                            Proses Perakitan Salah Satu Meja dalam Video
-                        </h3> 
-                        <div id ='desc6'style ='display:none;margin-top: 10px;'> - Saksikan proses finishing secara langsung melalui video ini. 
-                        </div> 
+            <div class='col-md-4 mb-4'>
+            <div class='post-entry' style='cursor:pointer;'> 
+                <!-- Thumbnail Video -->
+                <a href='#' class='post-thumbnail' onclick="enlargeVideo(this.querySelector('video'), 'Salah Satu Video Perakitan Meja Makan Trembesi'); return false;"> 
+                    <video width='410px' height='200px' controls style='object-fit:cover;border-radius:.5rem;'> 
+                        <source src="{{ asset('images/Rakit meja.mp4') }}" type='video/mp4'> 
+                        Your browser does not support the video tag. 
+                    </video>
+                </a> 
+                <!-- Isi Artikel -->
+                <div class="post-content-entry p-3"> 
+                    <h3 class="post-title">Salah Satu Video Perakitan Meja Makan Trembesi</h3> 
+                    <div id="desc5" style="margin-top:10px;"> 
+                        - Saksikan proses perakitan meja makan trembesi dalam video ini.
                     </div> 
                 </div> 
-            </div>
+            </div> 
+        </div>
 
-            <!-- Blog Post 7 -->
-            <div class='col-12 col-sm-6 col-md-4 mb-4'>
-                <div class='post-entry' onclick='toggleDescription("desc7")' style='cursor:pointer;'> 
-                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img')); return false;"> 
-                        <img src="{{ asset('images/72.JPEG') }}" alt="Proses Pengiriman Barang" style='width: 300px; height: 200px; object-fit: cover; border-radius: 10px;'> 
-                    </a> 
-                    <div class='post-content-entry p-3'> 
-                        <h3 style='font-size: 18px; color: #333; font-weight: bold;'> 
-                            Pengiriman Barang dengan Truck Kontainer
-                        </h3> 
-                        <div id='desc7' style='display:none;margin-top: 10px;'> 
-                            - Proses pengiriman barang menggunakan truck kontainer sangat efisien untuk muatan besar. 
-                        </div> 
-                    </div> 
-                </div> 
-            </div>
+        <!-- Modal untuk video -->
+        <div id="videoModal" class="modal" onclick="closeModal()" style="display:none;">
+            <video id="modalVideo" controls style="max-width:80%; max-height:80%; margin:auto; display:block;">
+                <source id="modalVideoSource" src="" type='video/mp4'>
+                Your browser does not support the video tag.
+            </video>
+            <p id="modalDescription" style="text-align:center;margin-top:.5rem;color:#333;"></p>
+        </div>
+        <div id="imageModal" class="modal" onclick="closeModal()" style="display:none;">
+            <img id="modalImage" src="" alt="Gambar Besar" style="max-width:80%; max-height:80%; margin:auto; display:block;">
+            <p id="modalDescription" style="text-align:center;margin-top:.5rem;color:#333;"></p>
+        </diV>
+        </div><!-- End Row -->
 
-            <!-- Blog Post 8 -->
-            <div class='col-12 col-sm-6 col-md-4 mb-4'>
-                <div class='post-entry' onclick='toggleDescription("desc8")' style='cursor:pointer;'> 
-                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img')); return false;"> 
-                        <img src="{{ asset('images/116.JPG') }}" alt="Proses Amplas Kursi" style='width: 300px; height: 200px; object-fit: cover; border-radius: 10px;'> 
-                    </a> 
-                    <div class='post-content-entry p-3'> 
-                        <h3 style='font-size: 18px; color:#333;font-weight:bold;'> 
-                            Proses Amplas Kursi
-                        </h3> 
-                        <div id ='desc8' style ='display:none;margin-top: 10px;'> 
-                            - Proses amplas kursi dilakukan untuk mendapatkan permukaan yang halus dan siap dicat.  
-                        </div>  
-                    </div>  
-                </div>  
-            </div>
 
-            <!-- Blog Post 9 -->
-            <div class='col-12 col-sm-6 col-md-4 mb-4'>
-                <div class='post-entry' onclick='toggleDescription("desc9")' style='cursor:pointer;'> 
-                    <a href="#" class='post-thumbnail' onclick="enlargeImage(this.querySelector('img')); return false;"> 
-                        <img src="{{ asset('images/113.JPG') }}" alt="Proses Servis Kursi" style='width: 300px; height: 200px; object-fit: cover; border-radius: 10px;'>  
-                    </a>  
-                    <div class='post-content-entry p-3'>  
-                        <h3 style='font-size: 18px; color:#333;font-weight:bold;'>  
-                            Proses Servis Kursi
-                        </h3>  
-                        <div id ='desc9' style ='display:none;margin-top: 10px;'>  
-                            - Proses servis kursi mencakup perbaikan dan pemeliharaan untuk memastikan kenyamanan pengguna.  
-                        </div>  
-                    </diV>  
-                </diV>  
-            </diV>
-        </diV><!-- End Row -->
+        <!-- Modal -->
+
 
         <!-- Tips Section -->
         <h2 class="text-center mt-5 mb-4">Tips Memilih Furnitur yang Tepat untuk Rumah Anda</h2>
@@ -231,44 +236,97 @@
 
     </diV><!-- End Container -->
 </diV><!-- End Blog Section -->
-<script>
-// JavaScript functions for toggling description and enlarging images
-function toggleDescription(id) {
-    var desc = document.getElementById(id);
-    desc.style.display = desc.style.display === 'none' ? 'block' : 'none';
-}
-
-function enlargeImage(img) {
-    var modal = document.getElementById("imageModal");
-    var modalImg = document.getElementById("modalImage");
-    modal.style.display = "block";
-    modalImg.src = img.src;
-}
-
-function closeModal() {
-    var modal = document.getElementById("imageModal");
-    modal.style.display = "none";
-}
-</script>
 <style>
-.modal {
-    display: none; /* Modal disembunyikan secara default */
-    position: fixed; /* Tetap di posisi tetap */
-    z-index: 1000; /* Di atas konten lainnya */
+    .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 300px;
-    background-color: rgba(0, 0, 0, 0.8); /* Latar belakang transparan hitam */
-    justify-content: center; /* Pusatkan konten */
-    align-items: center; /* Pusatkan konten secara vertikal */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
 }
 
-/* Gaya untuk gambar dalam modal */
 .modal img {
-    max-width: 90%; /* Maksimal lebar gambar */
-    max-height: 90%; /* Maksimal tinggi gambar */
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
 }
-    </style>
 
+.modal video {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px; /* Menambahkan border-radius untuk video */
+}
+
+.modal p {
+    color: white;
+    text-align: center;
+    margin-top: .5rem;
+}
+
+.post-entry {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.post-entry:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+</style>
+
+<!-- Tambahan JavaScript untuk interaksi modal -->
+<script>
+    function enlargeImage(img, description) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const modalDesc = document.getElementById("modalDescription");
+
+        modalImg.src = img.src;
+        modalDesc.innerText = description;
+
+        modal.style.display = "flex"; // Show the modal
+    }
+
+    function closeModal() {
+        // Menutup modal gambar
+        const imageModal = document.getElementById("imageModal");
+        imageModal.style.display = "none"; // Hide the image modal
+
+        // Menutup modal video
+        const videoModal = document.getElementById("videoModal");
+        videoModal.style.display = "none"; // Hide the video modal
+
+        // Pause video when closing
+        const modalVideo = document.getElementById("modalVideo");
+        if (modalVideo) {
+            modalVideo.pause();
+        }
+    }
+
+    function enlargeVideo(video, description) {
+        const modal = document.getElementById("videoModal");
+        const modalVideo = document.getElementById("modalVideo");
+        const modalVideoSource = document.getElementById("modalVideoSource");
+
+        // Set the source of the modal video to the clicked video's source
+        modalVideoSource.src = video.querySelector("source").src;
+        
+        // Load the new video
+        modalVideo.load();
+
+        // Set the description
+        document.getElementById("modalDescription").innerText = description;
+
+        // Show the modal
+        modal.style.display = "flex"; 
+    }
+</script>
 <script src="path/to/bootstrap.bundle.js"></script> 
 @endsection

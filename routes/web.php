@@ -99,6 +99,14 @@ route::get('/backend/category/destroy/{id}','App\Http\Controllers\categoryContro
 //laporan
 route::get('/backend/laporan','App\Http\Controllers\LaporanController@index')->name('index');
 route::get('/backend/laporan/cetak','App\Http\Controllers\LaporanController@cetak');
+
+//pesanan
+route::get('/backend/pesanan','App\Http\Controllers\PesananController@index')->name('index');
+route::get('/backend/pesanan/create','App\Http\Controllers\PesananController@create');
+route::post('/backend/pesanan/store','App\Http\Controllers\PesananController@store');
+route::get('/backend/pesanan/edit/{id}','App\Http\Controllers\PesananController@edit');
+route::post('/backend/pesanan/update/{id}','App\Http\Controllers\PesananController@update');
+route::get('/backend/pesanan/destroy/{id}','App\Http\Controllers\PesananController@destroy');
 //logut
 route::get('logout','App\Http\Controllers\LoginController@logout')->name('logout');
 

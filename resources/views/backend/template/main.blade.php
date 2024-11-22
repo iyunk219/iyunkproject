@@ -69,6 +69,12 @@
                             <li><i class="fa fa-table"></i><a href="{{url('/backend/pemesanan')}}">Data Pemesanan</a></li>
                         </ul>
                     </li>
+                    <li class="menu-item-has-children active dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>pPsanan</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-table"></i><a href="{{url('/backend/pesanan')}}">Data Pesanan</a></li>
+                        </ul>
+                    </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Laporan</a>
                         <ul class="sub-menu children dropdown-menu">
