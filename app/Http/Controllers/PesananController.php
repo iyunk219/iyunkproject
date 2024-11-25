@@ -15,8 +15,9 @@ class PesananController extends Controller
      */
     public function index()
     {
-        // $data['pesanan'] = pesanan::get();
-        return view('backend.pesanan.index');
+       $pesanan = Pesanan::with('user', 'produk')->get();
+
+        return view('backend.pesanan.index', compact('pesanan'));
     }
 
     /**
@@ -40,7 +41,30 @@ class PesananController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validasi input
+        $validated = $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'produk_id' => 'required|exists:produk,id',
+            'kelurahan' => 'required|string|max:255',
+            'kecamatan' => 'required|string|max:255',
+            'provinsi' => 'required|string|max:255',
+            'kabupaten' => 'required|string|max:255',
+            'catatan' => 'nullable|string',
+            'no_hp' => 'required|string|max:255',
+            'qty' => 'required|numeric',
+            'total' => 'required|string|max:255',
+            'subtotal' => 'required|string|max:255',
+            'keranjang_id' => 'required|integer',
+            'alamat' => 'required|string|max:255',
+            'tgl_pemesanan' => 'required|date',
+            'bayar_st' => 'required|string|max:255',
+        ]);
+
+        // Simpan data pesanan ke database
+        Pesanan::create($validated);
+
+        // Redirect atau return response
+        return redirect('/backend/pesanan');
     }
 
     /**

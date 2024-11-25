@@ -11,5 +11,16 @@ class Pesanan extends Model
      protected $table='pesanan';
     protected $primaryKey='id';
     public $timestamps = false;
-    protected $fillable=array('tgl_pemesanan','user_id','produk_id','bayar_st','kelurahan','kecamatan','kabupaten','provinsi','no_telp','catatan','qty');
+    protected $fillable=array('tgl_pemesanan','user_id','produk_id','bayar_st','kelurahan','kecamatan','kabupaten','provinsi','no_hp','catatan','qty','keranjang_id','total','subtotal','alamat');
+
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
+
+    // Hubungan dengan model Produk
+    public function produk()
+    {
+        return $this->belongsTo(Produk::class,'produk_id');
+    }
 }

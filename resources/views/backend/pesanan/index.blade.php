@@ -21,22 +21,48 @@
                                         <th style="width: 50px;">No</th>
                                         <th style="width: 150px;">Tgl Pemesanan</th>
                                         <th style="width: 150px;">Nama Pembeli</th>
+                                        <th style="width: 150px;">Email</th>
                                         <th style="width: 150px;">Alamat</th>
                                         <th style="width: 100px;">No Hp</th>
                                         <th style="width: 150px;">Nama Produk</th>
                                         <th style="width: 100px;">Harga</th>
-                                        <th style="width: 100px;">Dibayar</th>
+                                        <th style="width: 150px;">Img</th>
+                                        <th style="width: 100px;">Bayar St</th>
                                         <th style="width: 100px;">Kelurahan</th>
                                         <th style="width: 150px;">Kecamatan</th>
                                         <th style="width: 150px;">Kabupaten</th>
                                         <th style="width: 100px;">Provinsi</th>
                                         <th style="width: 150px;">Catatan Pesanan</th>
-                                        <th style="width: 150px;">Total Produk</th>
+                                        <th style="width: 150px;">Total </th>
+                                        <th style="width: 150px;">Subtotal</th>
+                                        <th style="width: 150px;">Keranjang </th>
                                         <th style="width: 150px;">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                 <!--  -->
+                                            @foreach($pesanan as $data)
+                                                <tr>
+                                                    <th scope="row">{{ $loop->iteration }}</th>
+                                                    <td>{{ \Carbon\Carbon::parse($data->tgl_pemesanan)->format('d-m-Y') }}</td>
+                                                                    <td>{{ optional($pesanan->user)->name ?? '-' }}</td> <!-- Nama pengguna -->
+                <td>{{ optional($pesanan->user)->email ?? '-' }}</td> <!-- Email pengguna -->
+                                                    <td>{{ $pesanan->alamat }}</td> <!-- Assuming alamat is stored in pesanan -->
+                                                    <td>{{ $pesanan->no_hp }}</td> <!-- Phone number -->
+                <td>{{ optional($pesanan->produk)->nama_produk ?? '-' }}</td> <!-- Nama produk -->
+                                                    <td>{{ $pesanan->total }}</td> <!-- Total price -->
+                                                    <td><img src="{{ asset('path/to/images/' . $pesanan->produk->img) }}" alt="{{ $pesanan->produk->nama_produk }}" style="max-width: 100%; height: auto;"></td> <!-- Product image -->
+                                                    <td>{{ $pesanan->bayar_st }}</td> <!-- Bayar ST -->
+                                                    <td>{{ $pesanan->kelurahan }}</td> <!-- Kelurahan -->
+                                                    <td>{{ $pesanan->kecamatan }}</td> <!-- Kecamatan -->
+                                                    <td>{{ $pesanan->kabupaten }}</td> <!-- Kabupaten -->
+                                                    <td>{{ $pesanan->provinsi }}</td> <!-- Provinsi -->
+                                                    <td>{{ $pesanan->catatan }}</td> <!-- Catatan Pesanan -->
+                                                    <td>{{ $pesanan->total }}</td> <!-- Total Produk -->
+                                                    <td>{{ $pesanan->subtotal }}</td> <!-- Subtotal -->
+                                                    <td>{{ $pesanan->keranjang_id }}</td> <!-- Keranjang ID -->
+                                                    <td><!-- Action buttons (edit, delete, etc.) --></td>
+                                                </tr>
+                                                @endforeach
                                 </tbody>
                             </table>
                     </div><!-- .card -->
