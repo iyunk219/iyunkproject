@@ -87,8 +87,7 @@
                        Email: jayamahe1820@gmail.com
                     </p>
                     <div id="map">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.318513226626!2d110.9064448832121!3d-6.481284646617751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e712fedfc7ae011%3A0x7a157fbde4fb1353!2sJl.%20Ratu%20Kalinyamat%2C%20Kec.%20Donorojo%2C%20Kabupaten%20Jepara%2C%20Jawa%20Tengah%2059454!5e0!3m2!1sid!2sid!4v1732177219332!5m2!1sid!2sid" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%" height="400px"
-            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16237760.212399734!2d100.36868409999998!3d-6.484030299999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e712fedfd3f97fb%3A0xa8a8303f94b8e589!2sJayamahe%20furniture!5e0!3m2!1sid!2sid!4v1732508462274!5m2!1sid!2sid" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div> <!-- /.col-md-4 -->
 
             </div> <!-- /.row -->

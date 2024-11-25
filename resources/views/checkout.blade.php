@@ -1,21 +1,25 @@
 @extends('template.layout')
 @section('content')
-
-		<!-- Start Hero Section -->
-			<div class="hero">
-				<div class="container">
-					<div class="row justify-content-between">
-						<div class="col-lg-5">
-							<div class="intro-excerpt">
-								<h1>Pembayaran</h1>
-							</div>
-						</div>
-						<div class="col-lg-7">
-							
-						</div>
-					</div>
-				</div>
-			</div>
+<div class="hero">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <div class="intro-excerpt">
+                    <h1>Pembayaran</h1>
+                    <p>Dengan melakukan pembayaran, Anda akan segera mendapatkan konfirmasi dan pesanan Anda akan diproses.</p>
+                        <a href="#" class="btn btn-secondary me-2">Belanja Sekarang</a>
+                        <a href="#" class="btn btn-white-outline">Jelajahi</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="hero-img-wrap" style="text-align: right;">
+                    <img src="images/222.jpg" alt="Background Image" style="width: 85%; height: auto; object-fit: cover;  margin-left: auto; display: block;">
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
 	<div class="untree_co-section before-footer-section">
     <div class="container">
         <div class="row mb-5">

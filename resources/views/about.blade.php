@@ -134,19 +134,19 @@
     <li>
         <strong class="clickable" onclick="toggleDescription('desc-minimalis')">Mebel Minimalis:</strong>
         <div id="desc-minimalis" class="description" style="display: none;">
-            Mebel minimalis dirancang dengan fokus pada kesederhanaan dan fungsi. Setiap potongan dibuat untuk memaksimalkan ruang tanpa mengorbankan estetika. Mebel ini sangat cocok untuk ruang tamu modern, memberikan tampilan yang bersih dan elegan.
+            Mebel minimalis mengutamakan kesederhanaan dan fungsionalitas. Desainnya yang ramping dan elegan membuatnya ideal untuk ruang tamu modern, memberikan nuansa yang bersih dan terorganisir.
         </div>
     </li>
     <li>
         <strong class="clickable" onclick="toggleDescription('desc-ukiran')">Mebel Ukiran Jepara:</strong>
         <div id="desc-ukiran" class="description" style="display: none;">
-            Mebel ukiran Jepara dikenal karena keindahan dan keterampilannya. Setiap detail ukiran dikerjakan dengan teliti oleh pengrajin yang ahli. Produk ini tidak hanya berfungsi sebagai furnitur, tetapi juga sebagai karya seni yang menambah keindahan ruangan Anda.
+            Mebel ukiran Jepara adalah perpaduan antara keindahan dan keterampilan tangan. Setiap ukiran diciptakan dengan penuh perhatian oleh pengrajin berpengalaman, menjadikannya bukan hanya furnitur, tetapi juga karya seni yang mempercantik ruang Anda.
         </div>
     </li>
     <li>
         <strong class="clickable" onclick="toggleDescription('desc-custom')">Mebel Desain Kustom:</strong>
         <div id="desc-custom" class="description" style="display: none;">
-            Kami menyadari bahwa setiap pelanggan memiliki kebutuhan yang unik. Dengan layanan desain kustom kami, Anda dapat membuat furnitur sesuai dengan spesifikasi dan gaya pribadi Anda. Dari pemilihan bahan hingga desain akhir, kami akan bekerja sama dengan Anda untuk menciptakan produk yang sempurna.
+            Kami memahami bahwa setiap pelanggan memiliki preferensi unik. Dengan layanan desain kustom kami, Anda dapat merancang furnitur yang sesuai dengan kebutuhan dan gaya pribadi Anda. Dari pemilihan bahan hingga detail akhir, kami siap membantu Anda menciptakan produk yang sempurna.
         </div>
     </li>
 </ul>
