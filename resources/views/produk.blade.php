@@ -49,8 +49,8 @@
             <div class="row" id="product-list">
                 @foreach ($produk as $data)
                     <div class="col-12 col-md-4 col-lg-3 mb-5 product-item {{ strtolower(trim($data->kategori)) }}">
-                        <a href="#" style="text-decoration: none; color: inherit;"
-                            onclick="addToCart('{{ $data->id }}', '{{ $data->nama_produk }}', '{{ number_format($data->harga, 2, ',', '.') }}', '{{ asset('backend/assets/storage/produk/' . $data->img) }}')">
+                        <a href="javascript:void(0)" style="text-decoration: none; color: inherit;"
+                          >
                             <img src="{{ asset('backend/assets/storage/' . $data->img) }}" alt="{{ $data->nama_produk }}"
                                 class="img-fluid product-thumbnail"
                                 style ="width:100%; height:250px; object-fit:cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
@@ -63,7 +63,7 @@
                                 {{ $data->deskripsi }}</p>
                             <!-- Tombol Plus untuk menambah ke keranjang -->
                             <button
-                                onclick="addToCart('{{ $data->id }}', '{{ $data->nama_produk }}', '{{ number_format($data->harga, 2, ',', '.') }}', '{{ asset('backend/assets/storage/produk/' . $data->img) }}')"
+                                onclick="tambah_produk_cart('{{ $data->id }}')"
                                 style="background-color: #28A745; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">
                                 +
                             </button>
@@ -129,3 +129,43 @@
         }
     </script>
 @endsection
+
+
+@push('bottom')
+    <script>
+        $(document).ready(function() {
+
+        });
+
+        function tambah_produk_cart(id_produk) {
+            $.ajax({
+                type: "post",
+                url: "{{ url('ajax_statement/tambah_cart') }}",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    id_produk: id_produk,
+                },
+                success: function(data) {
+                    Toastify({
+                        text: "Berhasil Menambah",
+                        duration: 2000,
+                        className: "info",
+                        style: {
+                            background: "linear-gradient(to right, #00b09b, #96c93d)",
+                        }
+                    }).showToast();
+                },
+                error: function(xhr, status, error) {
+                    Toastify({
+                        text: "Gagal Menambah. Error: " + error,
+                        duration: 2000,
+                        className: "error",
+                        style: {
+                            background: "linear-gradient(to right, #ff416c, #ff4b2b)",
+                        }
+                    }).showToast();
+                }
+            })
+        }
+    </script>
+@endpush

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DetailPesanan;
 use Illuminate\Http\Request;
 use App\Models\Pesanan;
 use App\Models\Produk;
@@ -15,7 +16,7 @@ class PesananController extends Controller
      */
     public function index()
     {
-       $pesanan = Pesanan::with('user', 'produk')->get();
+       $pesanan = Pesanan::with('user')->get();
 // dd($pesanan);
         return view('backend.pesanan.index', compact('pesanan'));
     }
@@ -41,25 +42,23 @@ class PesananController extends Controller
      */
     public function store(Request $request)
     {
-        // Validasi input
         $validated = $request->validate([
             'user_id' => 'required|exists:users,id',
-            'produk_id' => 'required|exists:produk,id',
+            // 'produk_id' => 'required|exists:produk,id',
             'kelurahan' => 'required|string|max:255',
             'kecamatan' => 'required|string|max:255',
             'provinsi' => 'required|string|max:255',
             'kabupaten' => 'required|string|max:255',
             'catatan' => 'nullable|string',
             'no_hp' => 'required|string|max:255',
-            'qty' => 'required|numeric',
-            'total' => 'required|string|max:255',
-            'subtotal' => 'required|string|max:255',
-            'keranjang_id' => 'required|integer',
+            // 'qty' => 'required|numeric',
+            // 'total' => 'required|string|max:255',
+            // 'subtotal' => 'required|string|max:255',
+            // 'keranjang_id' => 'required|integer',
             'alamat' => 'required|string|max:255',
-            'tgl_pemesanan' => 'required|date',
-            'bayar_st' => 'required|string|max:255',
+            // 'tgl_pemesanan' => 'required|date',
+            // 'bayar_st' => 'required|string|max:255',
         ]);
-
         // Simpan data pesanan ke database
         Pesanan::create($validated);
 
@@ -86,7 +85,12 @@ class PesananController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pesanan = Pesanan::findOrFail($id);
+        $detail_pesanan =  DetailPesanan::where('pesanan_id', $id)
+        ->join('produk', 'detail_pesanans.id_produk', '=', 'produk.id')
+        ->select('detail_pesanans.*', 'produk.nama_produk', 'produk.harga as harga_produk')
+        ->get();
+        return view('backend.pesanan.edit', compact('pesanan', 'detail_pesanan'));
     }
 
     /**
@@ -98,7 +102,11 @@ class PesananController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pesanan = Pesanan::findOrFail($id);
+        $pesanan->bayar_st = $request->get('bayar_st');
+        $pesanan->update();
+        return redirect('/backend/pesanan');
+
     }
 
     /**
@@ -109,6 +117,8 @@ class PesananController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pesanan = Pesanan::find($id)->delete();
+        DetailPesanan::where('pesanan_id', $id)->delete();
+        return redirect()->back();
     }
 }

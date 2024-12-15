@@ -13,12 +13,9 @@
     <!-- Bootstrap CSS -->
     <link href="{{ asset('asset/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/select2.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('asset/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css') }}"
-        rel="stylesheet">
-    <link rel="stylesheet"
-        href="{{ asset('asset/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css') }}">
     <link href="{{ asset('asset/css/tiny-slider.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('asset/lib/toastify/toastify.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .footer-section {
@@ -150,58 +147,55 @@
     <!-- End Header/Navigation -->
 
     @yield('content')
+    <script src="{{ asset('asset/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('asset/js/tiny-slider.js') }}"></script>
+    <script src="{{ asset('asset/js/custom.js') }}"></script>
+    <script src="{{ asset('asset/js/jquery.js') }}"></script>
+    <script src="{{ asset('asset/js/select2.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.select2').select2();
+        });
+    </script>
     <footer class="footer-section">
-        <div class="container">
-            <div class="row text-center">
-                <!-- Column 1: Company Name and Description -->
+        <div class="container" style="max-width: 600px; margin: auto;">
+            <div class="row">
                 <div class="col-md-4 mb-4">
-                    <h2 class="footer-logo">Jayamahe Furniture</h2>
-                    <p style="font-size: 14px;">Selamat datang di Jayamahe Furniture, toko online pilihan untuk semua
-                        kebutuhan furnitur dan dekorasi rumah Anda.</p>
-                    <p style="font-size: 14px;">Temukan beragam pilihan kursi makan, kursi santai, dan bangku untuk
-                        menciptakan ruang makan yang nyaman.</p>
+                    <h2>Jayamahe Furniture</h2>
+                    <p>Solusi terbaik untuk furnitur dan dekorasi rumah Anda.</p>
                 </div>
-
-                <!-- Column 2: Address -->
                 <div class="col-md-4 mb-4">
-                    <p class="address-section">Alamat:</p>
-                    <h2 style="font-size: 14px; color: #e0e0e0;">Jl, Ratu Kalinyamat Km 03, Rt05/Rw01 Blingoh, Donorojo,
-                        Jepara, Jawa Tengah, Indonesia</h2>
-                    <p style="font-size: 14px; color: #e0e0e0;">Senin - Sabtu: 08:00 - 18:00</p>
+                    <h2>Alamat Kami</h2>
+                    <p>
+                        <i class="fas fa-map-marker-alt" style="color: #f0e68c;"></i>
+                        Jl. Ratu Kalinyamat Km 03,<br>
+                        Rt05/Rw01 Blingoh,<br>
+                        Donorojo, Jepara,<br>
+                        Jawa Tengah, Indonesia
+                    </p>
+                    <p><strong>Jam Operasional:</strong><br> Senin - Sabtu: 08:00 - 18:00</p>
                 </div>
-
-                <!-- Column 3: Contact Information and Social Media -->
-                <div class="col-md-4 mb-4 text-left">
-                    <p style="font-size: 24px; font-weight: bold; color: #f0e68c;">Akun Sosial Media:</p>
-
-                    <p class="contact-info">Jika Anda ada pertanyaan terkait pemesanan, produk atau layanan kami yang
-                        lainnya. Sapa kami di kontak dibawah ini ya!</p>
-                    <p class="contact-info">Phone: +628889879872</p>
-                    <p class="contact-info">Email: hello@jayamahefurnitur.com</p>
-                    <div class="list-unstyled d-flex justify-content-center"> <!-- Flexbox for alignment -->
-                        <!-- Logo Tokopedia -->
-                        <!--  <a href="https://www.tokopedia.com/" title="Tokopedia" style="margin-right: 15px;">
-                        <img src="https://seeklogo.com/vector-logo/339743/tokopedia" alt="Logo Tokopedia" style="width: 30px; height: auto;">
-                    </a>  -->
-                        <!-- Ikon Instagram -->
+                <div class="col-md-4 mb-4">
+                    <h2>Kontak Kami</h2>
+                    <p>
+                        <i class="fas fa-phone" style="color: #f0e68c;"></i> Telepon: +628889879872<br>
+                        <i class="fas fa-envelope" style="color: #f0e68c;"></i> Email: hello@jayamahefurnitur.com
+                    </p>
+                    <div class="social-icons" style="margin-top: 10px;">
                         <a href="#" title="Instagram" class="social-icon">
-                            <i class="fab fa-instagram"></i> <!-- Ikon Instagram -->
+                            <i class="fab fa-instagram" style="font-size: 24px;"></i>
                         </a>
-                        <!-- Ikon WhatsApp -->
                         <a href="https://wa.me/6281234567890" title="WhatsApp" class="social-icon">
-                            <i class="fab fa-whatsapp"></i> <!-- Ikon WhatsApp -->
+                            <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
                         </a>
-                        <!-- Ikon TikTok -->
                         <a href="#" title="TikTok" class="social-icon">
-                            <i class="fab fa-tiktok"></i> <!-- Ikon TikTok -->
+                            <i class="fab fa-tiktok" style="font-size: 24px;"></i>
                         </a>
                     </div>
                 </div>
             </div>
-
-            <!-- Bottom Section -->
             <div style="margin-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.3); padding-top: 10px;">
-                <p style="text-align:center; font-size: 12px;">Hak Cipta &copy;
+                <p style="text-align:left; font-size: 12px;">Hak Cipta &copy;
                     <script>
                         document.write(new Date().getFullYear());
                     </script> Jayamahe Furniture. Semua Hak Dilindungi.
@@ -209,103 +203,63 @@
             </div>
         </div>
     </footer>
-    <script src="{{ asset('asset/js/bootstrap.bundle.min.js') }}"></script>
+
+    <style>
+        /* Gaya Footer */
+        .footer-section {
+            background-color: #3b5d50;
+            color: #ffffff;
+            padding: 30px 0;
+            /* Penambahan padding untuk ruang lebih */
+            font-family: Arial, sans-serif;
+            /* Font yang lebih modern */
+        }
+
+        .footer-section h2 {
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 2px solid #f0e68c;
+            margin-bottom: 15px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            line-height: 1.6;
+            /* Menambah jarak antar baris untuk keterbacaan */
+            margin-bottom: 10px;
+            /* Mengurangi jarak di bawah paragraf */
+        }
+
+        .social-icons a {
+            margin-right: 15px;
+            /* Spasi antar ikon sosial media */
+            color: #f0e68c;
+        }
+
+        .social-icons a:hover {
+            color: #ffffff;
+            /* Efek hover pada ikon sosial media */
+        }
+
+        @media (max-width: 576px) {
+            .footer-section {
+                padding: 20px 10px;
+                /* Padding responsif untuk perangkat kecil */
+            }
+        }
+    </style>
     <script src="{{ asset('asset/js/tiny-slider.js') }}"></script>
     <script src="{{ asset('asset/js/custom.js') }}"></script>
-    <script src="{{ asset('asset/js/jquery.js') }}"></script>
-    <script src="{{ asset('asset/js/select2.min.js') }}"></script>
-</body>
-<script>
-    $(document).ready(function() {
-        $('.select2').select2();
-    });
-</script>
-          @yield('content')
-<footer class="footer-section">
-    <div class="container" style="max-width: 600px; margin: auto;">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <h2>Jayamahe Furniture</h2>
-                <p>Solusi terbaik untuk furnitur dan dekorasi rumah Anda.</p>
-            </div>
-            <div class="col-md-4 mb-4">
-                <h2>Alamat Kami</h2>
-                <p>
-                    <i class="fas fa-map-marker-alt" style="color: #f0e68c;"></i> 
-                    Jl. Ratu Kalinyamat Km 03,<br>
-                    Rt05/Rw01 Blingoh,<br>
-                    Donorojo, Jepara,<br>
-                    Jawa Tengah, Indonesia
-                </p>
-                <p><strong>Jam Operasional:</strong><br> Senin - Sabtu: 08:00 - 18:00</p>
-            </div>
-            <div class="col-md-4 mb-4">
-                <h2>Kontak Kami</h2>
-                <p>
-                    <i class="fas fa-phone" style="color: #f0e68c;"></i> Telepon: +628889879872<br>
-                    <i class="fas fa-envelope" style="color: #f0e68c;"></i> Email: hello@jayamahefurnitur.com
-                </p>
-                <div class="social-icons" style="margin-top: 10px;">
-                    <a href="#" title="Instagram" class="social-icon">
-                        <i class="fab fa-instagram" style="font-size: 24px;"></i>
-                    </a>
-                    <a href="https://wa.me/6281234567890" title="WhatsApp" class="social-icon">
-                        <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
-                    </a>
-                    <a href="#" title="TikTok" class="social-icon">
-                        <i class="fab fa-tiktok" style="font-size: 24px;"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div style="margin-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.3); padding-top: 10px;">
-            <p style="text-align:left; font-size: 12px;">Hak Cipta &copy;<script>document.write(new Date().getFullYear());</script> Jayamahe Furniture. Semua Hak Dilindungi.</p>
-        </div>
-    </div>
-</footer>
+    <script src="{{ asset('asset/lib/toastify/toastify.js') }}"></script>
 
-<style>
-    /* Gaya Footer */
-    .footer-section {
-        background-color: #3b5d50; 
-        color: #ffffff;
-        padding: 30px 0; /* Penambahan padding untuk ruang lebih */
-        font-family: Arial, sans-serif; /* Font yang lebih modern */
-    }
-    .footer-section h2 {
-        font-size: 24px;
-        font-weight: bold;
-        border-bottom: 2px solid #f0e68c;
-        margin-bottom: 15px;
-    }
-    .footer-section h3 {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 15px;
-        margin-bottom: 10px;
-    }
-    .footer-section p {
-        font-size: 14px;
-        line-height: 1.6; /* Menambah jarak antar baris untuk keterbacaan */
-        margin-bottom: 10px; /* Mengurangi jarak di bawah paragraf */
-    }
-    .social-icons a {
-        margin-right: 15px; /* Spasi antar ikon sosial media */
-        color: #f0e68c;
-    }
-    .social-icons a:hover {
-        color: #ffffff; /* Efek hover pada ikon sosial media */
-    }
-    @media (max-width: 576px) {
-        .footer-section {
-            padding: 20px 10px; /* Padding responsif untuk perangkat kecil */
-        }
-    }
-</style>
-		<script src="{{asset('asset/js/bootstrap.bundle.min.js')}}"></script>
-		<script src="{{asset('asset/js/tiny-slider.js')}}"></script>
-		<script src="{{asset('asset/js/custom.js')}}"></script>
-	</body>
+</body>
 
 </html>
 @stack('bottom')

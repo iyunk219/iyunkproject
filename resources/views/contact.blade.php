@@ -8,8 +8,8 @@
                     <h1>Contact</h1>
                     <p class="mb-4">Ruang yang indah dimulai dari pilihan yang tepat! Belanja sekarang dan temukan item-item yang akan mempercantik rumah Anda!</p>
                     <p>
-                        <a href="#" class="btn btn-secondary me-2">Belanja Sekarang</a>
-                        <a href="#" class="btn btn-white-outline">Jelajahi</a>
+                        <a href="{{url('/produk')}}" class="btn btn-secondary me-2">Belanja Sekarang</a>
+                        <a href="{{url('/produk')}}" class="btn btn-white-outline">Jelajahi</a>
                     </p>
                 </div>
             </div>

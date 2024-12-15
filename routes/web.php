@@ -123,7 +123,10 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     //logut
     // route::get('logout','App\Http\Controllers\LoginController@logout')->name('logout');
 });
+route::post('checkout/store', 'App\Http\Controllers\FrontController@checkout_store');
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('/');
 Auth::routes();
+
+Route::any('ajax_statement/{type}/{id?}', [FrontController::class, 'ajax_statement']);

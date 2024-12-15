@@ -41,54 +41,30 @@
                             </tr>
                         </thead>
                         <tbody id='cart-list'>
-                            <!-- Contoh Produk 1 -->
+                            @foreach($cart as $row)
                             <tr data-id="1">
                                 <td class='product-thumbnail'>
                                     <img src='images/32.jpeg' alt='Gambar' class='img-fluid'>
                                 </td>
                                 <td class='product-name'>
-                                    <h2 class='h5 text-black'>Produk 1</h2>
+                                    <h2 class='h5 text-black'>{{$row->produk->nama_produk}}</h2>
                                 </td>
-                                <td class='product-price'>Rp 2.000.000</td>
+                                <td class='product-price'>{{$row->produk->harga}}</td>
                                 <td>
                                     <div class='input-group mb-3 d-flex align-items-center quantity-container' style='max-width: 120px;'>
                                         <div class='input-group-prepend'>
-                                            <button class='btn btn-outline-black decrease' type='button' onclick='updateTotal(this, -1)'>−</button>
+                                            <button class='btn btn-outline-black decrease' type='button' onclick="updateTotal('{{$row->id}}','kurang')">-</button>
                                         </div>
-                                        <input type='number' class='form-control text-center quantity-amount' value='1' min='1' onchange='updateTotal(this)'>
-                                        <div class='input-group-append'>
-                                            <button class='btn btn-outline-black increase' type='button' onclick='updateTotal(this, 1)'>+</button>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class='product-total'>Rp 2.000.000</td>
-                                <td><a href='#' class='btn btn-black btn-sm' onclick='removeProduct(this)'>X</a></td> 
-                            </tr>
-
-                            <!-- Contoh Produk 2 -->
-                            <tr data-id="2">
-                                <td class='product-thumbnail'>
-                                    <img src='images/19.jpeg' alt='Gambar' class='img-fluid'>
-                                </td>
-                                <td class='product-name'>
-                                    <h2 class='h5 text-black'>Produk 2</h2>
-                                </td>
-                                <td class='product-price'>Rp 2.000.000</td>
-                                <td>
-                                    <div class='input-group mb-3 d-flex align-items-center quantity-container' style='max-width: 120px;'>
-                                        <div class='input-group-prepend'>
-                                            <button class='btn btn-outline-black decrease' type='button' onclick='updateTotal(this, -1)'>−</button>
-                                        </div>
-                                        <input type='number' class='form-control text-center quantity-amount' value='1' min='1' onchange='updateTotal(this)'>
-                                        <div class='input-group-append'>
-                                            <button class='btn btn-outline-black increase' type='button' onclick='updateTotal(this, 1)'>+</button>
+                                        <input type='qty_{{$row->id}}' class='form-control text-center quantity-amount' value='{{$row->qty}}' min='1' onchange="updateTotal('{{$row->id}}')">
+                                        <div class='input-group-append'> 
+                                            <button class='btn btn-outline-black increase' type='button' onclick="updateTotal('{{$row->id}}','tambah')">+</button>
                                         </div>
                                     </div>
                                 </td>
-                                <td class='product-total'>Rp 2.000.000</td>
+                                <td class='product-total' id="total_qty_{{$row->id}}">{{$row->qty}}</td>
                                 <td><a href='#' class='btn btn-black btn-sm' onclick='removeProduct(this)'>X</a></td> 
                             </tr>
-
+                            @endforeach
                         </tbody>
                     </table>
 

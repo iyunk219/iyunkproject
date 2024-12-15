@@ -138,7 +138,7 @@ public function store(Request $request)
     $produk->id_category = $request->input('id_category');
 
         // Save the updated produk
-        $produk->save();
+        $produk->update();
 
      return redirect('/backend/produk')->with('success', 'Data produk berhasil diperbarui!');
     
