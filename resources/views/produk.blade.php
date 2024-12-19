@@ -147,7 +147,7 @@
                 },
                 success: function(data) {
                     Toastify({
-                        text: "Berhasil Menambah",
+                        text: "Berhasil Menambah keranjang",
                         duration: 2000,
                         className: "info",
                         style: {

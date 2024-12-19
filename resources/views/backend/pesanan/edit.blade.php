@@ -44,12 +44,16 @@
                                                 <td data-row-id="{{ $row->id }}" class="total-harga">
                                                     {{ number_format($totalHarga, 0, ',', '.') }}
                                                 </td>
+                                                <td><button class="btn btn-sm btn-danger"
+                                                        onclick="removeProduct('{{ $row->id }}')"><i
+                                                            class="fas fa-times-circle"></i></button></td>
                                             </tr>
                                         @endforeach
                                         <tr>
                                             <td colspan="4" class="text-right"><strong>Total</strong></td>
                                             <td class="grand-total">
-                                                <strong>{{ number_format($sumTotal, 0, ',', '.') }}</strong></td>
+                                                <strong>{{ number_format($sumTotal, 0, ',', '.') }}</strong>
+                                            </td>
                                         </tr>
 
 
@@ -59,12 +63,12 @@
                                         enctype="multipart/form-data">
                                         {{ @csrf_field() }}
                                         <div class="mb-1 row">
-                                            <label class="col-lg-3 col-md-6 col-form-label required">Bayar?</label>
+                                            <label class="col-lg-3 col-md-6 col-form-label required">Verif?</label>
                                             <div class="col-lg-8 col-md-6">
                                                 <label class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="bayar_st"
                                                         value="1" <?= @$pesanan->bayar_st == 1 ? 'checked' : '' ?>>
-                                                    <span class="form-check-label">Sudah</span>
+                                                    <span class="form-check-label">Verif</span>
                                                 </label>
                                                 <label class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="bayar_st"
@@ -158,6 +162,48 @@
                 style: 'currency',
                 currency: 'IDR'
             }).format(sumTotal));
+        }
+
+        function removeProduct(id) {
+            Swal.fire({
+                title: "Apakah anda yakin?",
+                text: "!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ya, hapus"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "{{ url('/ajax_statement/remove-product-cart') }}", // Sesuaikan endpoint Anda
+                        method: "POST",
+                        data: {
+                            id: id,
+                            _token: "{{ csrf_token() }}",
+                        },
+                        success: function(response) {
+                            if (response.status === "success") {
+                                Toastify({
+                                    text: "Berhasil menghapus",
+                                    duration: 2000,
+                                    className: "info",
+                                    style: {
+                                        background: "linear-gradient(to right, #00b09b, #96c93d)",
+                                    }
+                                }).showToast();
+                                window.location.reload()
+                            } else {
+                                alert(response.message || "Terjadi kesalahan saat menghapus produk.");
+                            }
+                        },
+                        error: function() {
+                            alert("Gagal menghapus produk. Silakan coba lagi.");
+                        },
+                    });
+                }
+            });
+
         }
     </script>
 @endpush

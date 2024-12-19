@@ -16,6 +16,7 @@
     <link href="{{ asset('asset/css/tiny-slider.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/lib/toastify/toastify.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('asset/lib/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .footer-section {
@@ -203,7 +204,23 @@
             </div>
         </div>
     </footer>
-
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="judul"></h5>
+              <i class="bi bi-x-lg" style="font-size: 20px;" data-bs-dismiss="modal" aria-label="Close"></i>
+              <!-- <button type="button" class="btn-close"></button> -->
+            </div>
+            <div class="modal-body">
+              <div id="page"></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <style>
         /* Gaya Footer */
         .footer-section {
@@ -257,7 +274,10 @@
     </style>
     <script src="{{ asset('asset/js/tiny-slider.js') }}"></script>
     <script src="{{ asset('asset/js/custom.js') }}"></script>
+    <script src="{{ asset('asset/js/sweetalert.js') }}"></script>
     <script src="{{ asset('asset/lib/toastify/toastify.js') }}"></script>
+
+    <script src="{{ asset('asset/js/bootstrap.min.js') }}"></script>
 
 </body>
 

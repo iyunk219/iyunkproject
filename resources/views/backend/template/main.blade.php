@@ -10,6 +10,7 @@
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="{{ asset('backend/assets/css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/lib/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/css/themify-icons.css') }}">
@@ -20,6 +21,7 @@
     <link href="{{ asset('asset/lib/toastify/toastify.css') }}" rel="stylesheet">   
 
     <script src="{{ asset('asset/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('asset/js/sweetalert.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800'"
         rel='stylesheet' type='text/css'>
 </head>

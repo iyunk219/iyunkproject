@@ -31,7 +31,7 @@
                                             <th style="width: 150px;">Catatan Pesanan</th>
                                             <th style="width: 150px;">Total </th>
                                             <th style="width: 150px;">Subtotal</th>
-                                            <th style="width: 100px;">Bayar St</th>
+                                            <th style="width: 100px;">Verif</th>
                                             <th style="width: 150px;">Aksi</th>
                                         </tr>
                                     </thead>

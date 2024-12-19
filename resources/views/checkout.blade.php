@@ -8,8 +8,8 @@
                         <h1>Pembayaran</h1>
                         <p>Dengan melakukan pembayaran, Anda akan segera mendapatkan konfirmasi dan pesanan Anda akan
                             diproses.</p>
-                        <a href="#" class="btn btn-secondary me-2">Belanja Sekarang</a>
-                        <a href="#" class="btn btn-white-outline">Jelajahi</a>
+                        <a href="{{ url('/produk') }}" class="btn btn-secondary me-2">Belanja Sekarang</a>
+                        <a href="{{ url('/produk') }}" class="btn btn-white-outline">Jelajahi</a>
                         </p>
                     </div>
                 </div>
@@ -25,7 +25,6 @@
     <div class="untree_co-section before-footer-section">
         <div class="container">
             <div class="row mb-5">
-                <form class="col-md-12" method="post" action="{{ url('checkout/store') }}">
                     <div class="site-blocks-table">
                         <table class='table' id='cart-table'>
                             <thead>
@@ -64,25 +63,14 @@
                                         </td>
                                         <td class='product-total' id="total_qty_{{ $row->id }}">{{ $row->qty }}
                                         </td>
-                                        <td><a href='#' class='btn btn-black btn-sm'
-                                                onclick='removeProduct({{ $row->id }})'>X</a></td>
+                                        <td><button type="button" class="btn btn-sm btn-danger"
+                                            onclick="removeProduct('{{ $row->id }}')"><i
+                                                class="fas fa-times-circle"></i></button></td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
-
-                        <!-- Tombol Perbarui dan Lanjutkan Belanja -->
-                        <div class='row mb-3'>
-                            <div class='col-md-6'>
-                                <button class='btn btn-black btn-sm btn-block'>Perbarui Keranjang</button>
-                            </div>
-                            <div class='col-md-6'>
-                                <button class='btn btn-outline-black btn-sm btn-block'>Lanjutkan Belanja</button>
-                            </div>
-                        </div> <!-- End of button row -->
-
-                    </div> <!-- End of site-blocks-table -->
-                </form> <!-- End of form -->
+                    </div> 
             </div>
 
             <!-- Detail Penagihan dan Pesanan Anda -->
@@ -90,7 +78,7 @@
                 <!-- Detail Penagihan -->
                 <div class='col-md-6'>
                     <!-- Header Detail Penagihan -->
-                    <h3 class='text-black h4 text-uppercase'>Detail Penagihan</h3>
+                    <h3 class='text-black h4 text-uppercase'>Keterangan</h3>
 
                     <!-- Form Detail Penagihan -->
                     <!-- Misalnya: Nama, Alamat, Email, dll. -->
@@ -201,11 +189,13 @@
                         </div>
 
                         <!-- Tombol Kirim -->
-                        <button type='submit' class='btn btn-black btn-lg py-3'>Kirim Detail Penagihan</button>
+                        <button type='submit' class='btn btn-black btn-lg py-3'>Kirim Pesanan</button>
                     </form>
 
                 </div> <!-- End of Detail Penagihan -->
+                <div class="col-md-6 mt-3" id="riwayat_checkout">
 
+                </div>
             </div> <!-- End of row for billing and order details -->
 
         </div> <!-- End of container -->
@@ -215,6 +205,7 @@
 @push('bottom')
     <script>
         $(document).ready(function() {
+            get_riwayat()
             // Event handler untuk tombol kurang dan tambah
             $(document).off("click", ".decrease, .increase").on("click", ".decrease, .increase", function() {
                 let button = $(this); // Tombol yang diklik
@@ -293,30 +284,50 @@
         });
 
         function removeProduct(id) {
-            $.ajax({
-                url: "{{ url('/ajax_statement/remove-product-cart') }}", // Sesuaikan endpoint Anda
-                method: "POST",
-                data: {
-                    id: id,
-                    _token: "{{ csrf_token() }}",
-                },
-                success: function(response) {
-                    if (response.status === "success") {
-                        Toastify({
-                            text: "Berhasil menghapus",
-                            duration: 2000,
-                            className: "info",
-                            style: {
-                                background: "linear-gradient(to right, #00b09b, #96c93d)",
+            Swal.fire({
+                title: "Apakah anda yakin?",
+                text: "!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ya, hapus"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "{{ url('/ajax_statement/remove-product-cart') }}", // Sesuaikan endpoint Anda
+                        method: "POST",
+                        data: {
+                            id: id,
+                            _token: "{{ csrf_token() }}",
+                        },
+                        success: function(response) {
+                            if (response.status === "success") {
+                                Toastify({
+                                    text: "Berhasil menghapus",
+                                    duration: 2000,
+                                    className: "info",
+                                    style: {
+                                        background: "linear-gradient(to right, #00b09b, #96c93d)",
+                                    }
+                                }).showToast();
+                                window.location.reload()
+                            } else {
+                                alert(response.message || "Terjadi kesalahan saat menghapus produk.");
                             }
-                        }).showToast();
-                    } else {
-                        alert(response.message || "Terjadi kesalahan saat menghapus produk.");
-                    }
-                },
-                error: function() {
-                    alert("Gagal menghapus produk. Silakan coba lagi.");
-                },
+                        },
+                        error: function() {
+                            alert("Gagal menghapus produk. Silakan coba lagi.");
+                        },
+                    });
+                }
+            });
+
+        }
+
+        function get_riwayat() {
+            $.get("{{ url('ajax_statement/riwayat_checkout') }}", {}, function(data, status) {
+                $('#riwayat_checkout').html(data);
             });
         }
     </script>

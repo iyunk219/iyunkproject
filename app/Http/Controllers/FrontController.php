@@ -175,5 +175,18 @@ class FrontController extends Controller
 
             return response()->json(['status' => 'success', 'message' => 'Berhasil menghapus.', 'data' => $res]);
         }
+        if ($type == 'riwayat_checkout') {
+            $user_id = Auth()->User()->id;
+            $d['pesanan'] = Pesanan::where('user_id', $user_id)
+                ->get();
+            foreach ($d['pesanan'] as $row) {
+                $detail_pesanan =  DetailPesanan::where('pesanan_id', $row->id)
+                    ->join('produk', 'detail_pesanans.id_produk', '=', 'produk.id')
+                    ->select('detail_pesanans.*', 'produk.nama_produk', 'produk.harga as harga_produk')
+                    ->get();
+                    $row->detail_pesanan = $detail_pesanan;
+            }
+            return view('riwayat_checkout', $d);
+        }
     }
 }
